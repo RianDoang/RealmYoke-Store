@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/styles/output.css" />
+    <link rel="icon" href="public/image/logoMobile.png" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>RealmYoke Store</title>
+  </head>
+  <body class="bg-slate-900 font-montserrat">
+    <nav
+      class="container flex items-center justify-between bg-slate-800 h-[67px] fixed z-10"
+    >
+      <div class="flex items-center justify-center">
+        <a href="#">
+          <img
+            src="public/image/logo2transparan.png"
+            alt=""
+            class="object-cover w-[60px]"
+          />
+        </a>
+        <div class="flex justify-center gap-5 ml-8">
+          <button
+            id="primary"
+            class="flex flex-col items-center after:mt-1 after:bg-amber-500 after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
+          >
+            <div class="flex items-center justify-center text-white gap-1">
+              <i class="fa-solid fa-house-chimney text-sm"></i>
+              <p class="text-sm">Home</p>
+            </div>
+          </button>
+          <button
+            id="check-order"
+            class="flex flex-col items-center after:mt-1 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
+          >
+            <div class="flex items-center justify-center text-white gap-1">
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              <p class="text-sm">Cek Pesanan</p>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="flex justify-center gap-5 text-white text-sm">
+        <button>Masuk</button>
+        <button
+          class="py-2 px-4 rounded bg-amber-500 transition duration-150 hover:bg-amber-600"
+        >
+          Daftar
+        </button>
+      </div>
+    </nav>
+
+    <!-- Payment -->
+    <section
+      class="w-9/12 mx-auto pt-28 pb-36 opacity-0 transition duration-200 hidden"
+      id="paymentList"
+    >
+      <div class="w-full">
+        <h2 class="flex gap-1 font-semibold text-white text-lg">
+          <span
+            class="flex flex-col after:rounded-sm after:mt-1 after:h-1 after:bg-amber-500 after:w-full"
+            >Cek</span
+          >
+          <p>Status Pesanan</p>
+        </h2>
+        <div class="w-full flex flex-col bg-slate-600 p-1 mt-5 rounded-lg px-5">
+          <form action="" class="w-full">
+            <h5 class="text-white text-sm font-medium py-3">No. Transaksi</h5>
+            <div
+              id="alertContactError"
+              class="hidden items-center justify-between bg-gray-800 w-full py-3 px-4 mb-8 rounded text-red-500"
+            >
+              <div class="flex items-center gap-3">
+                <svg
+                  class="flex-shrink-0 w-4 h-4"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+                  />
+                </svg>
+                <span class="font-medium text-sm"
+                  >No Transaksi tidak ditemukan.</span
+                >
+              </div>
+              <div
+                class="cursor-pointer p-3 bg-transparent rounded-md transition duration-150 hover:bg-gray-700"
+                id="closeContactError"
+              >
+                <svg
+                  class="w-3 h-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 14"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                  />
+                </svg>
+              </div>
+            </div>
+            <input
+              type="text"
+              placeholder="Masukkan nomor transaksi"
+              spellcheck="false"
+              required
+              autocomplete="off"
+              class="w-full mx-auto rounded-full py-2 px-4 outline-none"
+            />
+            <div class="flex items-center justify-end pt-4 pb-10">
+              <button
+                class="py-2.5 px-4 bg-amber-500 rounded-full text-white text-sm transition duration-150 hover:bg-amber-600"
+              >
+                Cek Pesanan
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- menuList -->
+    <section
+      class="w-5/6 mx-auto pt-24 pb-12 transition duration-200"
+      id="menuList"
+    >
+      <div class="flex flex-col">
+        <ul
+          class="w-full flex items-center justify-start gap-5 text-white font-poppins border-b border-b-slate-500 px-2"
+        >
+          <li>
+            <button
+              id="game"
+              class="flex flex-col items-center after:mt-1 after:bg-slate-200 after:transition after:duration-100 after:h-[1.5px] after:w-full after:flex-col after:rounded-full hover:after:bg-slate-200"
+            >
+              <div>Game</div>
+            </button>
+          </li>
+          <li>
+            <button
+              id="voucher"
+              class="flex flex-col items-center after:mt-1 after:bg-transparent after:transition after:duration-100 after:h-[1.5px] after:w-full after:flex-col after:rounded-full hover:after:bg-slate-200"
+            >
+              <div>Voucher</div>
+            </button>
+          </li>
+        </ul>
+        <div class="w-full flex items-center justify-center">
+          <div
+            id="gameList"
+            class="flex items-center justify-center flex-wrap gap-10 py-5 font-plusjakartasans transition duration-200"
+          >
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/Mobile Legends.png"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Mobile Legends
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  Moonton
+                </p>
+              </span>
+            </a>
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/Free Fire.webp"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Free Fire
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  Garena
+                </p>
+              </span>
+            </a>
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/Genshin Impact.png"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Gensin Impact
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  Hoyoverse
+                </p>
+              </span>
+            </a>
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/HOK.jpg"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Honor of Kings
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  Tencent
+                </p>
+              </span>
+            </a>
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/Star Rail.png"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Honkai: Star Rail
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  Hoyoverse
+                </p>
+              </span>
+            </a>
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/Valorant.png"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Valorant
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  Riot Games
+                </p>
+              </span>
+            </a>
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/game/Metal Slug.png"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Metal Slug Awakening
+                </h4>
+                <p
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                >
+                  VNG GAME STUDIOS
+                </p>
+              </span>
+            </a>
+          </div>
+          <div
+            id="voucherList"
+            class="hidden opacity-0 w-full items-center justify-start flex-wrap gap-10 py-5 font-plusjakartasans transition duration-200"
+          >
+            <a
+              href=""
+              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+            >
+              <img
+                src="src/assets/voucher/steam wallet.png"
+                alt=""
+                class="object-cover h-full"
+              />
+              <span
+                class="absolute top-0 left-0 w-full h-full gradient-card"
+              ></span>
+              <span
+                class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
+              >
+                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                  Steam Wallet (IDR)
+                </h4>
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-slate-800 font-plusjakartasans text-white">
+      <div class="container flex items-center justify-center pb-14 pt-8">
+        <div class="w-1/2 h-56 flex flex-col items-start justify-center pr-5">
+          <img
+            src="public/image/logo2transparan.png"
+            alt=""
+            class="object-cover w-36"
+          />
+          <p class="text-sm font-semibold">
+            RealmYoke menyediakan Tempat top up game termurah, tercepat, dan
+            terpercaya di Indonesia. Proses Otomatis cepat dan lancar! Tersedia
+            berbagai macam pembayaran Transfer Bank, E-Wallet, Scan QR,
+            Alfamart, & Indomart yg pasti memudahkan anda untuk bertransaksi.
+          </p>
+        </div>
+        <div class="w-1/2 h-56 flex items-start justify-between pl-5 pt-5">
+          <span>
+            <h1 class="font-semibold text-base">PETA SITUS</h1>
+            <ul
+              class="mt-5 flex flex-col items-start justify-center gap-3 font-medium text-sm"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <button
+                  id="footerPayment"
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                >
+                  Cek Pesanan
+                </button>
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Masuk</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Daftar</a
+                >
+              </li>
+            </ul>
+          </span>
+          <span>
+            <h1 class="font-semibold text-base">GAMES TERLARIS</h1>
+            <ul
+              class="mt-5 flex flex-col items-start justify-center gap-3 font-medium text-sm"
+            >
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Mobile Legends</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Valorant</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Free Fire</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Genshin Impact</a
+                >
+              </li>
+            </ul>
+          </span>
+          <span class="mr-3">
+            <h1 class="font-semibold text-base">SOSIAL MEDIA</h1>
+            <div class="mt-5 w-full flex items-center justify-between">
+              <a
+                href=""
+                class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
+                ><i class="fa-brands fa-instagram text-2xl"></i
+              ></a>
+              <a
+                href=""
+                class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
+                ><i class="fa-brands fa-tiktok text-2xl"></i
+              ></a>
+              <a
+                href=""
+                class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
+                ><i class="fa-brands fa-whatsapp text-2xl"></i
+              ></a>
+            </div>
+          </span>
+        </div>
+      </div>
+      <hr />
+      <p class="text-center text-white text-sm py-5 font-semibold">
+        Copyright ©2024 RealmYoke Store. All Rights Reserved
+        <a
+          href=""
+          class="text-amber-400 ml-1 transition duration-150 hover:text-amber-500"
+          >Syarat & Ketentuan Pengguna</a
+        >
+      </p>
+    </footer>
+
+    <script src="public/js/main.js"></script>
+  </body>
+</html>

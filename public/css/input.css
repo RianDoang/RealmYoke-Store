@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient-card {
+  background: linear-gradient(
+    to top,
+    rgba(245, 158, 11, 0.2),
+    rgba(245, 158, 11, 0.1),
+    rgba(245, 158, 11, 0)
+  );
+}
+
+.gradient-card-desk {
+  background: linear-gradient(
+    to top,
+    rgba(2, 6, 23, 0.9),
+    rgba(2, 6, 23, 0.7),
+    rgba(2, 6, 23, 0.5),
+    rgba(2, 6, 23, 0)
+  );
+}
+
+.text-xxs {
+  font-size: 10px;
+}
+
+.text-unormal {
+  font-size: 14.5px;
+}
+
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
