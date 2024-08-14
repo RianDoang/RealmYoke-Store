@@ -21,6 +21,20 @@
   );
 }
 
+.hamburger-active > span:nth-child(1) {
+  @apply rotate-45;
+  @apply w-[26.5px];
+}
+
+.hamburger-active > span:nth-child(2) {
+  @apply scale-0;
+}
+
+.hamburger-active > span:nth-child(3) {
+  @apply -rotate-45;
+  @apply w-[26.2px];
+}
+
 .text-xxs {
   font-size: 10px;
 }

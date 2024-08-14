@@ -26,45 +26,66 @@
     <title>RealmYoke Store</title>
   </head>
   <body class="bg-slate-900 font-montserrat">
-    <nav
-      class="container flex items-center justify-between bg-slate-800 h-[67px] fixed z-10"
-    >
-      <div class="flex items-center justify-center">
-        <a href="#">
-          <img
-            src="public/image/logo2transparan.png"
-            alt=""
-            class="object-cover w-[60px]"
-          />
-        </a>
-        <div class="flex justify-center gap-5 ml-8">
-          <button
-            id="primary"
-            class="flex flex-col items-center after:mt-1 after:bg-amber-500 after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
-          >
-            <div class="flex items-center justify-center text-white gap-1">
-              <i class="fa-solid fa-house-chimney text-sm"></i>
-              <p class="text-sm">Home</p>
-            </div>
-          </button>
-          <button
-            id="check-order"
-            class="flex flex-col items-center after:mt-1 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
-          >
-            <div class="flex items-center justify-center text-white gap-1">
-              <i class="fa-solid fa-magnifying-glass text-sm"></i>
-              <p class="text-sm">Cek Pesanan</p>
-            </div>
-          </button>
+    <nav class="flex items-center justify-center">
+      <div
+        class="container flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
+      >
+        <div class="flex items-center justify-center">
+          <a href="#">
+            <img
+              src="public/image/logo2transparan.png"
+              alt=""
+              class="object-cover w-[60px]"
+            />
+          </a>
         </div>
-      </div>
-      <div class="flex justify-center gap-5 text-white text-sm">
-        <button>Masuk</button>
-        <button
-          class="py-2 px-4 rounded bg-amber-500 transition duration-150 hover:bg-amber-600"
+        <div class="flex items-center justify-between w-full">
+          <div class="w-full flex items-center justify-between">
+            <div class="flex items-center justify-center gap-5 ml-8">
+              <button
+                id="primary"
+                class="flex flex-col items-center after:mt-1 after:bg-amber-500 after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
+              >
+                <div class="flex items-center justify-center text-white gap-1">
+                  <i class="fa-solid fa-house-chimney text-sm"></i>
+                  <p class="text-sm">Home</p>
+                </div>
+              </button>
+              <button
+                id="check-order"
+                class="flex flex-col items-center after:mt-1 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
+              >
+                <div class="flex items-center justify-center text-white gap-1">
+                  <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                  <p class="text-sm">Cek Pesanan</p>
+                </div>
+              </button>
+            </div>
+            <div class="flex justify-center gap-5 text-white text-sm">
+              <a href="" class="py-2 px-4">Masuk</a>
+              <a
+                href=""
+                class="py-2 px-4 rounded bg-amber-500 transition duration-150 hover:bg-amber-600"
+              >
+                Daftar
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          id="hamburgerMenu"
+          class="flex flex-col p-2 gap-1.5 cursor-pointer md:hidden"
         >
-          Daftar
-        </button>
+          <span
+            class="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-amber-500"
+          ></span>
+          <span
+            class="transition duration-300 ease-in-out flex h-[3px] w-5 rounded-sm bg-amber-500"
+          ></span>
+          <span
+            class="origin-bottom-left transition duration-300 ease-in-out flex h-[3px] w-6 rounded-sm bg-amber-500"
+          ></span>
+        </div>
       </div>
     </nav>
 
@@ -174,11 +195,11 @@
         <div class="w-full flex items-center justify-center">
           <div
             id="gameList"
-            class="flex items-center justify-center flex-wrap gap-10 py-5 font-plusjakartasans transition duration-200"
+            class="flex items-center justify-center flex-wrap gap-8 py-5 font-plusjakartasans transition duration-200 md:gap-10"
           >
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/Mobile Legends.png"
@@ -191,11 +212,13 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Mobile Legends
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   Moonton
                 </p>
@@ -203,7 +226,7 @@
             </a>
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/Free Fire.webp"
@@ -214,16 +237,15 @@
                 class="absolute top-0 left-0 w-full h-full gradient-card"
               ></span>
               <span
-                class="absolute top-0 left-0 w-full h-full gradient-card"
-              ></span>
-              <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Free Fire
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   Garena
                 </p>
@@ -231,7 +253,7 @@
             </a>
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/Genshin Impact.png"
@@ -244,11 +266,13 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Gensin Impact
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   Hoyoverse
                 </p>
@@ -256,7 +280,7 @@
             </a>
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/HOK.jpg"
@@ -269,11 +293,13 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Honor of Kings
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   Tencent
                 </p>
@@ -281,7 +307,7 @@
             </a>
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/Star Rail.png"
@@ -294,11 +320,13 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Honkai: Star Rail
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   Hoyoverse
                 </p>
@@ -306,7 +334,7 @@
             </a>
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/Valorant.png"
@@ -319,11 +347,13 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Valorant
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   Riot Games
                 </p>
@@ -331,7 +361,7 @@
             </a>
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/game/Metal Slug.png"
@@ -344,11 +374,13 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Metal Slug Awakening
                 </h4>
                 <p
-                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-[134px]"
+                  class="text-amber-400 text-xxs font-semibold -mt-1 truncate w-full md:w-[134px]"
                 >
                   VNG GAME STUDIOS
                 </p>
@@ -361,7 +393,7 @@
           >
             <a
               href=""
-              class="group relative w-44 h-64 rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500"
+              class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
                 src="src/assets/voucher/steam wallet.png"
@@ -374,7 +406,9 @@
               <span
                 class="absolute bottom-0 left-0 w-full gradient-card-desk translate-y-10 text-white px-4 py-3 transition duration-150 group-hover:translate-y-0"
               >
-                <h4 class="text-unormal font-semibold truncate w-[134px]">
+                <h4
+                  class="text-unormal font-semibold truncate w-full md:w-[134px]"
+                >
                   Steam Wallet (IDR)
                 </h4>
               </span>
@@ -385,12 +419,16 @@
     </section>
 
     <footer class="bg-slate-800 font-plusjakartasans text-white">
-      <div class="container flex items-center justify-center pb-14 pt-8">
-        <div class="w-1/2 h-56 flex flex-col items-start justify-center pr-5">
+      <div
+        class="container block items-center justify-center pb-10 pt-10 md:pb-14 md:pt-8 md:flex"
+      >
+        <div
+          class="w-full h-56 flex flex-col items-start justify-center pr-5 md:w-1/2"
+        >
           <img
             src="public/image/logo2transparan.png"
             alt=""
-            class="object-cover w-36"
+            class="object-cover w-28 md:w-36"
           />
           <p class="text-sm font-semibold">
             RealmYoke menyediakan Tempat top up game termurah, tercepat, dan
@@ -399,8 +437,10 @@
             Alfamart, & Indomart yg pasti memudahkan anda untuk bertransaksi.
           </p>
         </div>
-        <div class="w-1/2 h-56 flex items-start justify-between pl-5 pt-5">
-          <span>
+        <div
+          class="w-full flex flex-wrap items-start justify-between pt-10 md:pt-5 md:pl-5 md:flex-nowrap md:w-1/2"
+        >
+          <span class="w-1/2 mt-5 md:mt-0 md:w-auto">
             <h1 class="font-semibold text-base">PETA SITUS</h1>
             <ul
               class="mt-5 flex flex-col items-start justify-center gap-3 font-medium text-sm"
@@ -436,7 +476,7 @@
               </li>
             </ul>
           </span>
-          <span>
+          <span class="w-1/2 mt-5 md:mt-0 md:w-auto">
             <h1 class="font-semibold text-base">GAMES TERLARIS</h1>
             <ul
               class="mt-5 flex flex-col items-start justify-center gap-3 font-medium text-sm"
@@ -471,7 +511,7 @@
               </li>
             </ul>
           </span>
-          <span class="mr-3">
+          <span class="w-full mt-10 md:mt-0 md:mr-3 md:w-auto">
             <h1 class="font-semibold text-base">SOSIAL MEDIA</h1>
             <div class="mt-5 w-full flex items-center justify-between">
               <a
@@ -494,14 +534,16 @@
         </div>
       </div>
       <hr />
-      <p class="text-center text-white text-sm py-5 font-semibold">
+      <div
+        class="w-full px-5 text-center text-white text-xs py-5 font-semibold md:text-sm"
+      >
         Copyright ©2024 RealmYoke Store. All Rights Reserved
         <a
           href=""
-          class="text-amber-400 ml-1 transition duration-150 hover:text-amber-500"
+          class="text-amber-400 transition duration-150 ml-1 hover:text-amber-500"
           >Syarat & Ketentuan Pengguna</a
         >
-      </p>
+      </div>
     </footer>
 
     <script src="public/js/main.js"></script>

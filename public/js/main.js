@@ -1,3 +1,20 @@
+// Hamburger menu
+const hamburger = document.querySelector("#hamburgerMenu");
+const navMenu = document.querySelector("#navMenu");
+
+hamburger.addEventListener("click", function () {
+  hamburger.classList.toggle("hamburger-active");
+  navMenu.classList.toggle("hidden");
+});
+
+window.addEventListener("click", function (e) {
+  if (e.target != hamburger && e.target != navMenu) {
+    hamburger.classList.remove("hamburger-active");
+    navMenu.classList.add("hidden");
+  }
+});
+// End Hamburger menu
+
 // Navbar Menu
 // Dapatkan elemen tautan berdasarkan ID
 const primaryLink = document.getElementById("primary");
@@ -32,11 +49,14 @@ const paymentList = document.getElementById("paymentList");
 const footerPayment = document.getElementById("footerPayment");
 
 footerPayment.addEventListener("click", function () {
-  checkOrderLink.click();
   window.scrollTo({
     top: 0,
     behavior: "smooth",
   });
+
+  setTimeout(() => {
+    checkOrderLink.click();
+  }, 500);
 });
 
 checkOrderLink.addEventListener("click", function () {
