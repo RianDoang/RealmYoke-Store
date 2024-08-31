@@ -27,9 +27,9 @@
   </head>
   <body class="bg-slate-900 font-montserrat">
     <nav
-      class="container flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
+      class="w-full flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
     >
-      <div class="inline-block">
+      <div class="inline-block ml-5 md:ml-10">
         <img
           src="public/image/logo2transparan.png"
           alt="Icon"
@@ -39,14 +39,14 @@
 
       <div
         id="navMenu"
-        class="absolute top-20 right-5 w-56 py-2 rounded-lg bg-slate-600 hidden grid-cols-1 md:p-0 md:w-[87%] md:flex md:items-center md:justify-between md:bg-transparent md:top-3.5 md:right-8"
+        class="hidden grid-cols-1 absolute top-20 right-5 w-56 py-2 rounded-lg bg-gray-700 border border-gray-500 opacity-0 -translate-y-5 transition duration-150 md:opacity-100 md:translate-y-0 md:border-transparent md:p-0 md:w-[80%] md:flex md:items-center md:justify-between md:bg-transparent md:top-3.5 md:right-8 lg:w-[85%]"
       >
         <div
           class="grid grid-cols-1 items-center justify-start md:gap-5 md:flex md:w-72"
         >
           <button
             id="primary"
-            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-500 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:bg-amber-500 md:after:mt-1"
+            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:bg-amber-500 md:after:mt-1"
           >
             <div
               class="w-10/12 flex items-center justify-start text-white gap-1"
@@ -57,7 +57,7 @@
           </button>
           <button
             id="check-order"
-            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-500 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1"
+            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1"
           >
             <div
               class="w-10/12 flex items-center justify-start text-white gap-1"
@@ -67,27 +67,45 @@
             </div>
           </button>
         </div>
-        <span class="w-full flex h-[0.5px] bg-gray-500 my-1 md:hidden"></span>
+        <span class="w-full flex h-[0.5px] bg-gray-600 my-1 md:hidden"></span>
         <ul
           class="grid grid-cols-1 text-sm text-white items-center justify-start md:gap-5 md:flex"
         >
           <li
-            class="w-full transition duration-150 hover:bg-gray-500 md:hover:bg-transparent"
+            class="w-full transition duration-150 hover:bg-gray-600 md:hover:bg-transparent"
           >
             <a
               href=""
               class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4"
             >
-              <i class="fa-solid fa-right-to-bracket md:hidden"></i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-4 h-4 md:hidden"
+              >
+                <path
+                  d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                />
+              </svg>
               <p>Masuk</p>
             </a>
           </li>
-          <li class="w-full hover:bg-gray-500 md:hover:bg-transparent">
+          <li class="w-full hover:bg-gray-600 md:hover:bg-transparent">
             <a
               href=""
               class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4 md:rounded md:hover:bg-amber-600 md:bg-amber-500"
             >
-              <i class="fa-solid fa-right-to-bracket md:hidden"></i>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-4 h-4 md:hidden"
+              >
+                <path
+                  d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                />
+              </svg>
               <p>Daftar</p>
             </a>
           </li>
@@ -95,7 +113,7 @@
       </div>
       <div
         id="hamburgerMenu"
-        class="flex flex-col p-2 gap-1.5 cursor-pointer md:hidden"
+        class="flex flex-col p-2 gap-1.5 cursor-pointer mr-5 md:hidden"
       >
         <span
           class="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-amber-500"
@@ -122,7 +140,7 @@
           >
           <p>Status Pesanan</p>
         </h2>
-        <div class="w-full flex flex-col bg-slate-600 p-1 mt-5 rounded-lg px-5">
+        <div class="w-full flex flex-col bg-slate-700 p-1 mt-5 rounded-lg px-5">
           <form action="" class="w-full">
             <h5 class="text-white text-sm font-medium py-3">No. Transaksi</h5>
             <div

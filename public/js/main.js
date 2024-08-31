@@ -3,14 +3,26 @@ const hamburger = document.querySelector("#hamburgerMenu");
 const navMenu = document.querySelector("#navMenu");
 
 hamburger.addEventListener("click", function () {
-  hamburger.classList.toggle("hamburger-active");
-  navMenu.classList.toggle("hidden");
+  hamburger.classList.add("hamburger-active");
+  navMenu.classList.remove("hidden");
+  setTimeout(() => {
+    navMenu.classList.remove("-translate-y-5");
+    navMenu.classList.toggle("translate-y-0");
+    navMenu.classList.remove("opacity-0");
+    navMenu.classList.toggle("opacity-100");
+  }, 1);
 });
 
 window.addEventListener("click", function (e) {
   if (e.target != hamburger && e.target != navMenu) {
     hamburger.classList.remove("hamburger-active");
-    navMenu.classList.add("hidden");
+    navMenu.classList.add("-translate-y-5");
+    navMenu.classList.remove("translate-y-0");
+    navMenu.classList.add("opacity-0");
+    navMenu.classList.remove("opacity-100");
+    setTimeout(() => {
+      navMenu.classList.add("hidden");
+    }, 200);
   }
 });
 // End Hamburger menu
