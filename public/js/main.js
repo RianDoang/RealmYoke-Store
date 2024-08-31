@@ -22,24 +22,24 @@ const checkOrderLink = document.getElementById("check-order");
 
 // Fungsi untuk menghapus efek dari semua tautan
 function removeActiveEffect() {
-  primaryLink.classList.remove("after:bg-amber-500");
-  primaryLink.classList.add("after:bg-transparent");
-  checkOrderLink.classList.remove("after:bg-amber-500");
-  checkOrderLink.classList.add("after:bg-transparent");
+  primaryLink.classList.remove("md:after:bg-amber-500");
+  primaryLink.classList.add("md:after:bg-transparent");
+  checkOrderLink.classList.remove("md:after:bg-amber-500");
+  checkOrderLink.classList.add("md:after:bg-transparent");
 }
 
 // Tambahkan event listener untuk tautan "Home"
 primaryLink.addEventListener("click", function () {
   removeActiveEffect(); // Hilangkan efek dari tautan lain
-  primaryLink.classList.add("after:bg-amber-500"); // Tambahkan efek ke tautan "Home"
-  primaryLink.classList.remove("after:bg-transparent"); // Hilangkan bg transparan
+  primaryLink.classList.add("md:after:bg-amber-500"); // Tambahkan efek ke tautan "Home"
+  primaryLink.classList.remove("md:after:bg-transparent"); // Hilangkan bg transparan
 });
 
 // Tambahkan event listener untuk tautan "Check Order"
 checkOrderLink.addEventListener("click", function () {
   removeActiveEffect(); // Hilangkan efek dari tautan lain
-  checkOrderLink.classList.add("after:bg-amber-500"); // Tambahkan efek ke tautan "Check Order"
-  checkOrderLink.classList.remove("after:bg-transparent"); // Hilangkan bg transparan
+  checkOrderLink.classList.add("md:after:bg-amber-500"); // Tambahkan efek ke tautan "Check Order"
+  checkOrderLink.classList.remove("md:after:bg-transparent"); // Hilangkan bg transparan
 });
 // End Navbar Menu
 

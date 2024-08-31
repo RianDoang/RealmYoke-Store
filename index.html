@@ -26,66 +26,86 @@
     <title>RealmYoke Store</title>
   </head>
   <body class="bg-slate-900 font-montserrat">
-    <nav class="flex items-center justify-center">
+    <nav
+      class="container flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
+    >
+      <div class="inline-block">
+        <img
+          src="public/image/logo2transparan.png"
+          alt="Icon"
+          class="object-cover w-[60px]"
+        />
+      </div>
+
       <div
-        class="container flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
+        id="navMenu"
+        class="absolute top-20 right-5 w-56 py-2 rounded-lg bg-slate-600 hidden grid-cols-1 md:p-0 md:w-[87%] md:flex md:items-center md:justify-between md:bg-transparent md:top-3.5 md:right-8"
       >
-        <div class="flex items-center justify-center">
-          <a href="#">
-            <img
-              src="public/image/logo2transparan.png"
-              alt=""
-              class="object-cover w-[60px]"
-            />
-          </a>
-        </div>
-        <div class="flex items-center justify-between w-full">
-          <div class="w-full flex items-center justify-between">
-            <div class="flex items-center justify-center gap-5 ml-8">
-              <button
-                id="primary"
-                class="flex flex-col items-center after:mt-1 after:bg-amber-500 after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
-              >
-                <div class="flex items-center justify-center text-white gap-1">
-                  <i class="fa-solid fa-house-chimney text-sm"></i>
-                  <p class="text-sm">Home</p>
-                </div>
-              </button>
-              <button
-                id="check-order"
-                class="flex flex-col items-center after:mt-1 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full hover:after:bg-amber-500"
-              >
-                <div class="flex items-center justify-center text-white gap-1">
-                  <i class="fa-solid fa-magnifying-glass text-sm"></i>
-                  <p class="text-sm">Cek Pesanan</p>
-                </div>
-              </button>
-            </div>
-            <div class="flex justify-center gap-5 text-white text-sm">
-              <a href="" class="py-2 px-4">Masuk</a>
-              <a
-                href=""
-                class="py-2 px-4 rounded bg-amber-500 transition duration-150 hover:bg-amber-600"
-              >
-                Daftar
-              </a>
-            </div>
-          </div>
-        </div>
         <div
-          id="hamburgerMenu"
-          class="flex flex-col p-2 gap-1.5 cursor-pointer md:hidden"
+          class="grid grid-cols-1 items-center justify-start md:gap-5 md:flex md:w-72"
         >
-          <span
-            class="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-amber-500"
-          ></span>
-          <span
-            class="transition duration-300 ease-in-out flex h-[3px] w-5 rounded-sm bg-amber-500"
-          ></span>
-          <span
-            class="origin-bottom-left transition duration-300 ease-in-out flex h-[3px] w-6 rounded-sm bg-amber-500"
-          ></span>
+          <button
+            id="primary"
+            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-500 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:bg-amber-500 md:after:mt-1"
+          >
+            <div
+              class="w-10/12 flex items-center justify-start text-white gap-1"
+            >
+              <i class="fa-solid fa-house-chimney text-sm"></i>
+              <p class="text-sm">Home</p>
+            </div>
+          </button>
+          <button
+            id="check-order"
+            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-500 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1"
+          >
+            <div
+              class="w-10/12 flex items-center justify-start text-white gap-1"
+            >
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              <p class="text-sm">Cek Pesanan</p>
+            </div>
+          </button>
         </div>
+        <span class="w-full flex h-[0.5px] bg-gray-500 my-1 md:hidden"></span>
+        <ul
+          class="grid grid-cols-1 text-sm text-white items-center justify-start md:gap-5 md:flex"
+        >
+          <li
+            class="w-full transition duration-150 hover:bg-gray-500 md:hover:bg-transparent"
+          >
+            <a
+              href=""
+              class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4"
+            >
+              <i class="fa-solid fa-right-to-bracket md:hidden"></i>
+              <p>Masuk</p>
+            </a>
+          </li>
+          <li class="w-full hover:bg-gray-500 md:hover:bg-transparent">
+            <a
+              href=""
+              class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4 md:rounded md:hover:bg-amber-600 md:bg-amber-500"
+            >
+              <i class="fa-solid fa-right-to-bracket md:hidden"></i>
+              <p>Daftar</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        id="hamburgerMenu"
+        class="flex flex-col p-2 gap-1.5 cursor-pointer md:hidden"
+      >
+        <span
+          class="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-amber-500"
+        ></span>
+        <span
+          class="transition duration-300 ease-in-out flex h-[3px] w-5 rounded-sm bg-amber-500"
+        ></span>
+        <span
+          class="origin-bottom-left transition duration-300 ease-in-out flex h-[3px] w-6 rounded-sm bg-amber-500"
+        ></span>
       </div>
     </nav>
 
