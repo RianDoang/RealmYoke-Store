@@ -94,10 +94,26 @@ primaryLink.addEventListener("click", function () {
   paymentList.classList.add("fade-out");
   menuList.classList.add("-translate-x-10");
 
+  license.classList.remove("translate-y-0");
+  license.classList.add("translate-y-10");
+  license.classList.remove("opacity-100");
+  license.classList.add("opacity-0");
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
   setTimeout(() => {
     menuList.classList.add("flex");
     menuList.classList.remove("hidden");
   }, 200);
+
+  setTimeout(() => {
+    license.classList.add("hidden");
+    menuList.classList.remove("opacity-0");
+    menuList.classList.remove("translate-y-10");
+  }, 350);
 
   setTimeout(() => {
     paymentList.classList.add("hidden");
@@ -202,5 +218,60 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 450);
   });
   // End Game list
+
+  const license = document.getElementById("license");
+  const licenseBtn = document.getElementById("licenseBtn");
+  const licenseBack = document.getElementById("licenseBack");
+
+  licenseBtn.addEventListener("click", function () {
+    menuList.classList.add("translate-y-10");
+    menuList.classList.add("opacity-0");
+    menuList.classList.remove("opacity-100");
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
+    setTimeout(() => {
+      menuList.classList.add("hidden");
+      license.classList.remove("hidden");
+    }, 350);
+
+    setTimeout(() => {
+      license.classList.add("translate-y-0");
+      license.classList.remove("translate-y-10");
+      license.classList.add("opacity-100");
+      license.classList.remove("opacity-0");
+      primaryLink.classList.remove("md:after:bg-amber-500");
+    }, 400);
+  });
+
+  licenseBack.addEventListener("click", function () {
+    license.classList.remove("translate-y-0");
+    license.classList.add("translate-y-10");
+    license.classList.remove("opacity-100");
+    license.classList.add("opacity-0");
+
+    setTimeout(() => {
+      license.classList.add("hidden");
+      menuList.classList.remove("hidden");
+      menuList.classList.add("translate-y-10");
+    }, 350);
+
+    setTimeout(() => {
+      menuList.classList.remove("translate-y-10");
+      menuList.classList.add("translate-y-0");
+      menuList.classList.remove("opacity-0");
+      menuList.classList.add("opacity-100");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      primaryLink.classList.add("md:after:bg-amber-500");
+    }, 400);
+  });
 });
 // End Nav Game list
