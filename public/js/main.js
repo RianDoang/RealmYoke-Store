@@ -1,3 +1,4 @@
+// main.js
 // Hamburger menu
 const hamburger = document.querySelector("#hamburgerMenu");
 const navMenu = document.querySelector("#navMenu");
@@ -99,6 +100,8 @@ primaryLink.addEventListener("click", function () {
   license.classList.remove("opacity-100");
   license.classList.add("opacity-0");
 
+  checkOrderLink.classList.remove("hidden");
+
   window.scrollTo({
     top: 0,
     behavior: "smooth",
@@ -107,6 +110,7 @@ primaryLink.addEventListener("click", function () {
   setTimeout(() => {
     menuList.classList.add("flex");
     menuList.classList.remove("hidden");
+    checkOrderLink.classList.remove("opacity-0");
   }, 200);
 
   setTimeout(() => {
@@ -227,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuList.classList.add("translate-y-10");
     menuList.classList.add("opacity-0");
     menuList.classList.remove("opacity-100");
+    checkOrderLink.classList.add("opacity-0");
 
     window.scrollTo({
       top: 0,
@@ -236,6 +241,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
       menuList.classList.add("hidden");
       license.classList.remove("hidden");
+      checkOrderLink.classList.add("hidden");
     }, 350);
 
     setTimeout(() => {
@@ -252,11 +258,13 @@ document.addEventListener("DOMContentLoaded", function () {
     license.classList.add("translate-y-10");
     license.classList.remove("opacity-100");
     license.classList.add("opacity-0");
+    checkOrderLink.classList.remove("hidden");
 
     setTimeout(() => {
       license.classList.add("hidden");
       menuList.classList.remove("hidden");
       menuList.classList.add("translate-y-10");
+      checkOrderLink.classList.remove("opacity-0");
     }, 350);
 
     setTimeout(() => {

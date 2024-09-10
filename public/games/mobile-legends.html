@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../src/styles/output.css" />
+    <link rel="icon" href="../image/logoMobile.png" />
+
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>
+      Mobile Legends - Komunitas terbesar yang memiliki Layanan Top Up Games
+      terbaik di Indonesia
+    </title>
+  </head>
+  <body class="bg-slate-900 font-montserrat">
+    <nav
+      class="w-full flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
+    >
+      <div class="inline-block ml-5 md:ml-10">
+        <img
+          src="../../public/image/logo2transparan.png"
+          alt="Icon"
+          class="object-cover w-[60px]"
+        />
+      </div>
+
+      <div
+        id="navMenu"
+        class="hidden grid-cols-1 absolute top-20 right-5 w-56 py-2 rounded-lg bg-gray-700 border border-gray-500 opacity-0 -translate-y-5 transition duration-150 md:opacity-100 md:translate-y-0 md:border-transparent md:p-0 md:w-[80%] md:flex md:items-center md:justify-between md:bg-transparent md:top-3.5 md:right-8 lg:w-[85%]"
+      >
+        <div
+          class="grid grid-cols-1 items-center justify-start md:gap-5 md:flex md:w-72"
+        >
+          <a
+            href="../../index.html"
+            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:bg-amber-500 md:after:mt-1 md:w-[30%]"
+          >
+            <div
+              class="w-10/12 flex items-center justify-start text-white gap-1 md:justify-center"
+            >
+              <i class="fa-solid fa-house-chimney text-sm"></i>
+              <p class="text-sm">Home</p>
+            </div>
+          </a>
+          <a
+            href="../../index.html"
+            class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1 md:w-[46%]"
+          >
+            <div
+              class="w-10/12 flex items-center justify-start text-white gap-1 md:justify-center"
+            >
+              <i class="fa-solid fa-magnifying-glass text-sm"></i>
+              <p class="text-sm">Cek Pesanan</p>
+            </div>
+          </a>
+        </div>
+        <span class="w-full flex h-[0.5px] bg-gray-600 my-1 md:hidden"></span>
+        <ul
+          class="grid grid-cols-1 text-sm text-white items-center justify-start md:gap-5 md:flex"
+        >
+          <li
+            class="w-full transition duration-150 hover:bg-gray-600 md:hover:bg-transparent"
+          >
+            <a
+              href=""
+              class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-4 h-4 md:hidden"
+              >
+                <path
+                  d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                />
+              </svg>
+              <p>Masuk</p>
+            </a>
+          </li>
+          <li class="w-full hover:bg-gray-600 md:hover:bg-transparent">
+            <a
+              href=""
+              class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4 md:rounded md:hover:bg-amber-600 md:bg-amber-500"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                fill="currentColor"
+                class="w-4 h-4 md:hidden"
+              >
+                <path
+                  d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
+                />
+              </svg>
+              <p>Daftar</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div
+        id="hamburgerMenu"
+        class="flex flex-col p-2 gap-1.5 cursor-pointer mr-5 md:hidden"
+      >
+        <span
+          class="origin-top-left transition duration-300 ease-in-out flex h-[3px] w-4 rounded-sm bg-amber-500"
+        ></span>
+        <span
+          class="transition duration-300 ease-in-out flex h-[3px] w-5 rounded-sm bg-amber-500"
+        ></span>
+        <span
+          class="origin-bottom-left transition duration-300 ease-in-out flex h-[3px] w-6 rounded-sm bg-amber-500"
+        ></span>
+      </div>
+    </nav>
+
+    <section class="w-[95%] mx-auto text-red-500 text-sm pt-24 pb-5">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur aut
+        doloremque fugit fugiat ut laboriosam nesciunt aperiam voluptatum
+        aliquam non. Neque veniam natus quae eaque suscipit ex, deserunt
+        repellendus, ipsa fuga optio mollitia praesentium possimus eligendi.
+        Tempora molestias tempore nobis fugit? Veritatis tenetur aperiam magnam
+        itaque unde minus, impedit ex consequatur libero, eveniet sequi non
+        quidem numquam exercitationem doloremque consequuntur dolorem sit a
+        deleniti. Consequuntur accusantium molestiae esse fuga provident
+        necessitatibus tempore deserunt doloremque exercitationem eum saepe
+        facere, labore illo unde nisi molestias accusamus obcaecati hic
+        repellat, nobis minus sit consectetur? Corrupti non eius ratione,
+        repellat, exercitationem qui, ipsa placeat nam quod modi ullam dolore
+        quo soluta officia ipsum cupiditate animi iusto distinctio ipsam
+        veritatis quidem repudiandae iste. Non commodi cum a, magni consequatur
+        eius incidunt vitae exercitationem illo dolor dicta repudiandae deleniti
+        optio ullam officiis aut perferendis animi, distinctio quidem. Iste
+        aliquid, modi voluptates iure eum ipsam alias totam voluptas. Minima
+        officiis repudiandae sint quisquam officia pariatur deleniti molestiae
+        doloremque eaque soluta. Iste doloremque ipsum enim! Neque enim
+        perferendis ut eum laboriosam amet architecto qui sed sunt impedit magni
+        cupiditate nobis dolor error aliquid molestias, tempore eligendi hic
+        mollitia fuga! Sunt, inventore ullam ea doloribus perspiciatis cumque?
+        Fugiat repellendus, cum dignissimos velit illum consequuntur obcaecati
+        perspiciatis delectus quod iste officiis praesentium aliquid doloremque
+        quas ad quam beatae ipsum quo distinctio sint? Qui, ex illo tempore
+        velit nemo amet iusto deleniti, architecto eum ducimus nam. Asperiores
+        velit facere ab aperiam maxime ea harum officia maiores eum! Quisquam
+        eum hic explicabo earum ex accusantium laborum nobis? Voluptatem
+        explicabo beatae at. Tenetur, provident. Voluptas quam ut fugiat
+        consequatur ipsam vitae quia placeat nulla necessitatibus! Ullam eius
+        libero itaque inventore sunt voluptate, optio quis, sit magnam vel vitae
+        consequuntur omnis et eaque dignissimos amet consectetur quos provident
+        rem est nihil iusto accusantium doloremque quae. Distinctio minus
+        deserunt, optio dolorem accusamus aliquam illum blanditiis, pariatur aut
+        maiores molestiae asperiores soluta repudiandae possimus nesciunt!
+        Maxime soluta doloremque incidunt ab. Aperiam iure consequatur
+        laboriosam nesciunt fugiat, provident quaerat! Beatae debitis, voluptas
+        error a omnis asperiores tempore delectus veritatis excepturi. Deserunt,
+        dolorum. Nostrum enim impedit cumque ad error animi placeat dolorum
+        saepe illo molestiae atque, labore architecto quod a nihil perferendis
+        iusto dolore voluptatibus? Quia tempore veniam officiis qui iste, maxime
+        atque possimus velit voluptatem quibusdam nihil quos quas facere tempora
+        culpa aliquam similique debitis doloremque delectus inventore. Itaque
+        ipsa facilis ex. Dignissimos facere rem cum, dolores dicta autem amet,
+        ex soluta reiciendis culpa, voluptate non eum quod deleniti vero numquam
+        blanditiis modi illo quia fugit optio! Omnis doloribus repellat, amet
+        fuga possimus harum, alias eum aliquid impedit quam fugiat cupiditate.
+        Eum, corrupti. Quos aliquam libero adipisci amet rerum vel repudiandae.
+        Eum adipisci in quibusdam sint, natus laborum earum porro excepturi
+        aliquam aspernatur id consequuntur enim incidunt amet ratione voluptate
+        dolores pariatur expedita ipsum. Dignissimos libero saepe praesentium
+        inventore facilis voluptates. Rerum eum beatae aliquid repellendus,
+        molestias laudantium minus porro a quis ipsam impedit ea necessitatibus
+        consequuntur provident sunt quas eaque error sed excepturi rem expedita
+        velit.
+      </p>
+    </section>
+
+    <footer class="bg-slate-800 font-plusjakartasans text-white">
+      <div
+        class="container block items-center justify-center pb-10 pt-10 md:pb-14 md:pt-8 md:flex"
+      >
+        <div
+          class="w-full h-56 flex flex-col items-start justify-center pr-5 md:w-1/2"
+        >
+          <img
+            src="../../public/image/logo2transparan.png"
+            alt=""
+            class="object-cover w-28 md:w-36"
+          />
+          <p class="text-sm font-semibold">
+            RealmYoke menyediakan Tempat top up game termurah, tercepat, dan
+            terpercaya di Indonesia. Proses Otomatis cepat dan lancar! Tersedia
+            berbagai macam pembayaran Transfer Bank, E-Wallet, Scan QR,
+            Alfamart, & Indomart yg pasti memudahkan anda untuk bertransaksi.
+          </p>
+        </div>
+        <div
+          class="w-full flex flex-wrap items-start justify-between pt-10 md:pt-5 md:pl-5 md:flex-nowrap md:w-1/2"
+        >
+          <span class="w-1/2 mt-5 md:mt-0 md:w-auto">
+            <h1 class="font-semibold text-base">PETA SITUS</h1>
+            <ul
+              class="mt-5 flex flex-col items-start justify-center gap-3 font-medium text-sm"
+            >
+              <li>
+                <a
+                  href="../../index.html"
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Beranda</a
+                >
+              </li>
+              <li>
+                <a
+                  href="../../index.html"
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                >
+                  Cek Pesanan
+                </a>
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Masuk</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Daftar</a
+                >
+              </li>
+            </ul>
+          </span>
+          <span class="w-1/2 mt-5 md:mt-0 md:w-auto">
+            <h1 class="font-semibold text-base">GAMES TERLARIS</h1>
+            <ul
+              class="mt-5 flex flex-col items-start justify-center gap-3 font-medium text-sm"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Mobile Legends</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Valorant</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Free Fire</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="transition duration-150 text-slate-300 hover:text-white"
+                  >Genshin Impact</a
+                >
+              </li>
+            </ul>
+          </span>
+          <span class="w-full mt-10 md:mt-0 md:mr-3 md:w-auto">
+            <h1 class="font-semibold text-base">SOSIAL MEDIA</h1>
+            <div class="mt-5 w-full flex items-center justify-between">
+              <a
+                href=""
+                class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
+                ><i class="fa-brands fa-instagram text-2xl"></i
+              ></a>
+              <a
+                href=""
+                class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
+                ><i class="fa-brands fa-tiktok text-2xl"></i
+              ></a>
+              <a
+                href=""
+                class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
+                ><i class="fa-brands fa-whatsapp text-2xl"></i
+              ></a>
+            </div>
+          </span>
+        </div>
+      </div>
+      <hr />
+      <div
+        class="w-full px-5 text-center text-white text-xs py-5 font-semibold md:text-sm"
+      >
+        Copyright ©2024 RealmYoke Store. All Rights Reserved
+        <a
+          href="../../index.html?triggerLicense=true"
+          id="licenseHome"
+          class="text-amber-400 transition duration-150 ml-1 hover:text-amber-500"
+        >
+          Syarat & Ketentuan Pengguna
+        </a>
+      </div>
+    </footer>
+
+    <script src="../js/ml.js"></script>
+  </body>
+</html>

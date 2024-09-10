@@ -23,7 +23,10 @@
       rel="stylesheet"
     />
 
-    <title>RealmYoke Store</title>
+    <title>
+      RealmYoke Store - Komunitas terbesar yang memiliki Layanan Top Up Games
+      terbaik di Indonesia
+    </title>
   </head>
   <body class="bg-slate-900 font-montserrat">
     <nav
@@ -236,7 +239,7 @@
             class="flex items-center justify-center flex-wrap gap-8 py-5 font-plusjakartasans transition duration-200 md:gap-10"
           >
             <a
-              href=""
+              href="public/games/mobile-legends.html"
               class="group relative rounded overflow-hidden border-2 border-slate-800 shadow-lg shadow-slate-800 transition duration-150 hover:border-amber-500 w-32 h-44 md:w-44 md:h-64"
             >
               <img
@@ -463,7 +466,7 @@
     >
       <h1 class="flex gap-1 font-semibold text-white text-lg">
         <span
-          class="flex flex-col after:rounded-sm after:mt-1 after:h-1 after:bg-amber-500 after:w-[35%]"
+          class="flex flex-col after:transition after:duration-200 after:rounded-sm after:mt-1 after:h-1 after:bg-amber-500 after:w-[35%] after:origin-left"
           >Syarat & Ketentuan</span
         >
       </h1>
@@ -901,5 +904,26 @@
     </footer>
 
     <script src="public/js/main.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Periksa jika ada parameter triggerLicense di URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const triggerLicense = urlParams.get("triggerLicense");
+
+        // Jika parameter triggerLicense=true, jalankan fungsi licenseBtn
+        if (triggerLicense === "true") {
+          // Mengambil elemen tombol
+          const licenseBtn = document.getElementById("licenseBtn");
+          if (licenseBtn) {
+            // Klik tombol licenseBtn untuk menjalankan fungsinya
+            licenseBtn.click();
+
+            // Hapus parameter triggerLicense dari URL setelah eksekusi
+            const urlWithoutParam = window.location.href.split("?")[0];
+            window.history.replaceState({}, document.title, urlWithoutParam);
+          }
+        }
+      });
+    </script>
   </body>
 </html>
