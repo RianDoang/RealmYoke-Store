@@ -839,7 +839,7 @@
             >
               <li>
                 <a
-                  href=""
+                  href="public/games/mobile-legends.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Mobile Legends</a
                 >
@@ -904,26 +904,5 @@
     </footer>
 
     <script src="public/js/main.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Periksa jika ada parameter triggerLicense di URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const triggerLicense = urlParams.get("triggerLicense");
-
-        // Jika parameter triggerLicense=true, jalankan fungsi licenseBtn
-        if (triggerLicense === "true") {
-          // Mengambil elemen tombol
-          const licenseBtn = document.getElementById("licenseBtn");
-          if (licenseBtn) {
-            // Klik tombol licenseBtn untuk menjalankan fungsinya
-            licenseBtn.click();
-
-            // Hapus parameter triggerLicense dari URL setelah eksekusi
-            const urlWithoutParam = window.location.href.split("?")[0];
-            window.history.replaceState({}, document.title, urlWithoutParam);
-          }
-        }
-      });
-    </script>
   </body>
 </html>

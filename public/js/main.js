@@ -232,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function () {
     menuList.classList.add("opacity-0");
     menuList.classList.remove("opacity-100");
     checkOrderLink.classList.add("opacity-0");
+    paymentList.classList.remove("fade-in");
 
     window.scrollTo({
       top: 0,
@@ -242,6 +243,7 @@ document.addEventListener("DOMContentLoaded", function () {
       menuList.classList.add("hidden");
       license.classList.remove("hidden");
       checkOrderLink.classList.add("hidden");
+      paymentList.classList.add("hidden");
     }, 350);
 
     setTimeout(() => {
@@ -283,3 +285,48 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 // End Nav Game list
+
+// Fungsi luar href
+
+// DOM Syarat & Ketentuan
+document.addEventListener("DOMContentLoaded", function () {
+  // Periksa jika ada parameter triggerLicense di URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const triggerLicense = urlParams.get("triggerLicense");
+
+  // Jika parameter triggerLicense=true, jalankan fungsi licenseBtn
+  if (triggerLicense === "true") {
+    // Mengambil elemen tombol
+    const licenseBtn = document.getElementById("licenseBtn");
+    if (licenseBtn) {
+      // Klik tombol licenseBtn untuk menjalankan fungsinya
+      licenseBtn.click();
+
+      // Hapus parameter triggerLicense dari URL setelah eksekusi
+      const urlWithoutParam = window.location.href.split("?")[0];
+      window.history.replaceState({}, document.title, urlWithoutParam);
+    }
+  }
+});
+
+// DOM Cek Pesanan
+document.addEventListener("DOMContentLoaded", function () {
+  // Periksa jika ada parameter triggerCek di URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const triggerCek = urlParams.get("triggerCek");
+
+  // Jika parameter triggerCek=true, jalankan fungsi CekBtn
+  if (triggerCek === "true") {
+    // Mengambil elemen tombol
+    const backtoCek = document.getElementById("check-order");
+    if (backtoCek) {
+      // Klik tombol CekBtn untuk menjalankan fungsinya
+      backtoCek.click();
+
+      // Hapus parameter triggerCek dari URL setelah eksekusi
+      const urlWithoutParam = window.location.href.split("?")[0];
+      window.history.replaceState({}, document.title, urlWithoutParam);
+    }
+  }
+});
+// End Fungsi luar href

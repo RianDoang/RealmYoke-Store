@@ -35,6 +35,10 @@
   @apply w-[26.2px];
 }
 
+.text-sxs {
+  font-size: 11px;
+}
+
 .text-xxs {
   font-size: 10px;
 }
