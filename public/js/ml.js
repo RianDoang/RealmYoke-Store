@@ -116,10 +116,22 @@ function formatWhatsAppNumber(number) {
   return number.replace(/(\d{4})(?=\d)/g, "$1-");
 }
 
+// Fungsi untuk membuat nomor transaksi unik
+function generateTransactionId() {
+  const timestamp = Date.now().toString().slice(-10); // Ambil 10 digit terakhir dari timestamp
+  const randomPart = Math.floor(Math.random() * 10000)
+    .toString()
+    .padStart(4, "0"); // Bagian acak 4 digit
+  return `${timestamp}${randomPart}`; // Gabungkan timestamp (10 digit) dan angka acak (4 digit)
+}
+
 function printOrder() {
   const userId = document.getElementById("userId").value;
   const zoneId = document.getElementById("zoneId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
+
+  // Buat nomor transaksi unik
+  const transactionId = generateTransactionId(userId);
 
   // Gabungkan userId dan zoneId
   const userZoneId = `(${userId}) (${zoneId})`;
@@ -130,10 +142,56 @@ function printOrder() {
   document.getElementById("totalPrice").textContent = `Rp${selectedPrice}`;
   document.getElementById("whatsappNumberDisplay").textContent =
     formatWhatsAppNumber(whatsappNumber); // Format dan tampilkan nomor WhatsApp
-
+  document.getElementById(
+    "transactionIdDisplay"
+  ).textContent = `${transactionId}`;
   // Tampilkan section detail pembelian
 }
 // End Print Order User
+
+// Create Order
+document.getElementById("createOrder").addEventListener("click", function () {
+  const userId = document.getElementById("userId").value;
+  const zoneId = document.getElementById("zoneId").value;
+  const whatsappNumber = document.getElementById("whatsappNumber").value;
+
+  if (
+    !userId ||
+    !zoneId ||
+    !whatsappNumber ||
+    !selectedDiamond ||
+    !selectedPayment
+  ) {
+    alert("Harap mengisi semua form dengan benar.");
+    return;
+  }
+
+  // Format nomor WhatsApp yang akan dikirim
+  const formattedWhatsAppNumber = formatWhatsAppNumber(whatsappNumber);
+
+  // Buat nomor transaksi
+  const transactionId = generateTransactionId();
+
+  // Format pesan yang akan dikirim ke WhatsApp
+  const message =
+    `*Detail Pembelian:*\n\n` +
+    `*No. Transaksi:* ${transactionId}\n` +
+    `*User ID:* ${userId}\n` +
+    `*Zone ID:* ${zoneId}\n` +
+    `*Order:* ${selectedDiamond}\n` +
+    `*Pembayaran:* ${selectedPayment}\n` +
+    `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
+    `*Total Harga:* Rp${selectedPrice}\n\n` +
+    `Terima kasih telah melakukan pemesanan.`;
+
+  // Encode URL
+  const encodedMessage = encodeURIComponent(message);
+  const url = `https://wa.me/6287776837873?text=${encodedMessage}`;
+
+  // Redirect ke WhatsApp
+  window.location.href = url;
+});
+// End Create Order
 
 // Order Now Popup
 const orderNow = document.getElementById("orderNow");

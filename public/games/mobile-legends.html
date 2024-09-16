@@ -683,32 +683,36 @@
           <table class="w-full mt-5 font-medium text-sm">
             <tbody>
               <tr>
-                <td class="text-left py-1">Kategori Layanan:</td>
-                <td class="text-left py-1">Mobile Legends</td>
+                <td class="text-left py-1.5">Kategori Layanan:</td>
+                <td class="text-left py-1.5">Mobile Legends</td>
               </tr>
               <tr>
-                <td class="text-left py-1">Nominal Layanan:</td>
-                <td id="nominalLayanan" class="text-left py-1"></td>
+                <td class="text-left py-1.5">Nominal Layanan:</td>
+                <td id="nominalLayanan" class="text-left py-1.5"></td>
               </tr>
               <!-- <tr>
-                <td class="text-left py-1">Nickname:</td>
-                <td id="nickname" class="text-left py-1"></td>
+                <td class="text-left py-1.5">Nickname:</td>
+                <td id="nickname" class="text-left py-1.5"></td>
               </tr> -->
               <tr>
-                <td class="text-left py-1">UserID & ZoneID:</td>
-                <td id="userZoneIdDisplay" class="text-left py-1"></td>
+                <td class="text-left py-1.5">UserID & ZoneID:</td>
+                <td id="userZoneIdDisplay" class="text-left py-1.5"></td>
               </tr>
               <tr>
-                <td class="text-left py-1">Metode Pembayaran:</td>
-                <td id="paymentMethod" class="text-left py-1"></td>
+                <td class="text-left py-1.5">Metode Pembayaran:</td>
+                <td id="paymentMethod" class="text-left py-1.5"></td>
               </tr>
               <tr>
-                <td class="text-left py-1">Nomor WhatsApp:</td>
-                <td id="whatsappNumberDisplay" class="text-left py-1"></td>
+                <td class="text-left py-1.5">Nomor WhatsApp:</td>
+                <td id="whatsappNumberDisplay" class="text-left py-1.5"></td>
               </tr>
               <tr>
-                <td class="text-left py-1">Total Harga:</td>
-                <td id="totalPrice" class="text-left py-1"></td>
+                <td class="text-left py-1.5">Nomor Transaksi:</td>
+                <td id="transactionIdDisplay" class="text-left py-1.5"></td>
+              </tr>
+              <tr>
+                <td class="text-left py-1.5 font-semibold">Total Harga:</td>
+                <td id="totalPrice" class="text-left py-1.5 font-semibold"></td>
               </tr>
             </tbody>
           </table>
@@ -721,9 +725,10 @@
           >
             <button id="cancelOrder" class="py-2 px-3 rounded-xl">Batal</button>
             <button
+              id="createOrder"
               class="bg-amber-500 py-2 px-3 rounded-xl transition duration-200 hover:bg-amber-600"
             >
-              Bayar Sekarang
+              Buat Order
             </button>
           </span>
         </span>
@@ -731,7 +736,10 @@
     </section>
 
     <!-- Alert -->
-    <section id="alertForm" class="fixed top-0 right-0 mt-[66px] hidden opacity-0 translate-x-96 transition duration-300">
+    <section
+      id="alertForm"
+      class="fixed top-0 right-0 mt-[66px] hidden opacity-0 translate-x-96 transition duration-300"
+    >
       <div
         class="relative flex flex-col items-center justify-center px-5 py-3 rounded-l-md text-red-500 bg-gray-700 shadow-lg shadow-slate-500"
       >
