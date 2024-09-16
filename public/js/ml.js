@@ -132,15 +132,13 @@ function printOrder() {
     formatWhatsAppNumber(whatsappNumber); // Format dan tampilkan nomor WhatsApp
 
   // Tampilkan section detail pembelian
-  document.getElementById("orderSummary").classList.remove("hidden");
-  document.body.classList.add("overflow-hidden");
 }
 // End Print Order User
 
 // Order Now Popup
 const orderNow = document.getElementById("orderNow");
 const orderSummary = document.getElementById("orderSummary");
-const payNow = document.getElementById("payNow");
+const alertForm = document.getElementById("alertForm");
 
 orderNow.addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
@@ -148,26 +146,43 @@ orderNow.addEventListener("click", function () {
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   if (!userId || !zoneId || !whatsappNumber) {
-    payNow.classList.add("cursor-not-allowed");
-    payNow.classList.add("opacity-30");
-    payNow.classList.remove("hover:bg-amber-600");
+    alertForm.classList.remove("hidden");
+    alertForm.classList.add("flex");
+
+    setTimeout(() => {
+      alertForm.classList.remove("opacity-0");
+      alertForm.classList.add("opacity-100");
+      alertForm.classList.remove("translate-x-96");
+      alertForm.classList.add("translate-x-0");
+    }, 300);
+
+    setTimeout(() => {
+      alertForm.classList.add("opacity-0");
+      alertForm.classList.remove("opacity-100");
+      alertForm.classList.add("translate-x-96");
+      alertForm.classList.remove("translate-x-0");
+    }, 5000);
+
+    setTimeout(() => {
+      alertForm.classList.add("hidden");
+      alertForm.classList.remove("flex");
+    }, 5300);
+
     console.log("not allowed");
   } else {
-    payNow.classList.remove("cursor-not-allowed");
-    payNow.classList.remove("opacity-30");
-    payNow.classList.add("hover:bg-amber-600");
+    orderSummary.classList.add("flex");
+    orderSummary.classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+
+    setTimeout(() => {
+      orderSummary.classList.remove("opacity-0");
+      orderSummary.classList.add("opacity-100");
+      orderSummary.classList.remove("-translate-y-10");
+      orderSummary.classList.add("translate-y-0");
+    }, 200);
+
     console.log("allowed");
   }
-
-  orderSummary.classList.add("flex");
-  orderSummary.classList.remove("hidden");
-
-  setTimeout(() => {
-    orderSummary.classList.remove("opacity-0");
-    orderSummary.classList.add("opacity-100");
-    orderSummary.classList.remove("-translate-y-10");
-    orderSummary.classList.add("translate-y-0");
-  }, 200);
 });
 
 const cancelOrder = document.getElementById("cancelOrder");
