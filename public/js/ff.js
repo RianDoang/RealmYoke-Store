@@ -127,14 +127,13 @@ function generateTransactionId() {
 
 function printOrder() {
   const userId = document.getElementById("userId").value;
-  const zoneId = document.getElementById("zoneId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   // Buat nomor transaksi unik
   const transactionId = generateTransactionId(userId);
 
   // Gabungkan userId dan zoneId
-  const userZoneId = `(${userId}) (${zoneId})`;
+  const userZoneId = `(${userId})`;
 
   document.getElementById("userZoneIdDisplay").textContent = userZoneId;
   document.getElementById("nominalLayanan").textContent = selectedDiamond;
@@ -156,10 +155,9 @@ const alertForm = document.getElementById("alertForm");
 
 orderNow.addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
-  const zoneId = document.getElementById("zoneId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
-  if (!userId || !zoneId || !whatsappNumber) {
+  if (!userId || !whatsappNumber) {
     alertForm.classList.remove("hidden");
     alertForm.classList.add("flex");
 
@@ -218,7 +216,6 @@ cancelOrder.addEventListener("click", function () {
 // Create Order
 document.getElementById("createOrder").addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
-  const zoneId = document.getElementById("zoneId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   // Format nomor WhatsApp yang akan dikirim
@@ -241,9 +238,8 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `*Detail Pembelian:*\n\n` +
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Mobile Legends\n` +
+    `*Kategori:* Free Fire\n` +
     `*User ID:* ${userId}\n` +
-    `*Zone ID:* ${zoneId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +
     `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
