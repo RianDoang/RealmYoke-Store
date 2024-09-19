@@ -1,10 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "index.html",
-    "public/games/mobile-legends.html",
-    "public/js/ml.js",
-    "public/js/main.js",
+    "./index.html",
+    "./public/js/main.js",
+    "./public/games/*.html",
+    "./public/js/games/*.js",
   ],
   theme: {
     extend: {

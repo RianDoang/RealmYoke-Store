@@ -133,7 +133,7 @@ function printOrder() {
   const transactionId = generateTransactionId(userId);
 
   // Gabungkan userId dan zoneId
-  const userZoneId = `${userId}`;
+  const userZoneId = `(${userId})`;
 
   document.getElementById("userZoneIdDisplay").textContent = userZoneId;
   document.getElementById("nominalLayanan").textContent = selectedDiamond;
@@ -238,7 +238,7 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `*Detail Pembelian:*\n\n` +
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Valorant ID\n` +
+    `*Kategori:* Free Fire\n` +
     `*User ID:* ${userId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +

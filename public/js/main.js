@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       primaryLink.classList.add("md:after:bg-amber-500");
-    }, 400);
+    }, 400); 
   });
 });
 // End Nav Game list
