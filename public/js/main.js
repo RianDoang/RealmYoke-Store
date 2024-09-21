@@ -8,9 +8,9 @@ hamburger.addEventListener("click", function () {
   navMenu.classList.remove("hidden");
   setTimeout(() => {
     navMenu.classList.remove("-translate-y-5");
-    navMenu.classList.toggle("translate-y-0");
+    navMenu.classList.add("translate-y-0");
     navMenu.classList.remove("opacity-0");
-    navMenu.classList.toggle("opacity-100");
+    navMenu.classList.add("opacity-100");
   }, 1);
 });
 
