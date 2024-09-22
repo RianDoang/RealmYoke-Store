@@ -103,7 +103,7 @@ let selectedPayment = "-";
 let selectedPrice = "0";
 
 function selectDiamond(amount, price) {
-  selectedDiamond = `${amount} Ruby`;
+  selectedDiamond = `IDR ${amount}`;
   selectedPrice = price; // Simpan harga yang dipilih
 }
 

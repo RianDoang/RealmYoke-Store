@@ -1956,6 +1956,10 @@ video {
     width: 1.75rem;
   }
 
+  .lg\:w-9 {
+    width: 2.25rem;
+  }
+
   .lg\:w-\[30\%\] {
     width: 30%;
   }

@@ -4,7 +4,9 @@ module.exports = {
     "./index.html",
     "./public/js/main.js",
     "./public/games/*.html",
+    "./public/voucher/*.html",
     "./public/js/games/*.js",
+    "./public/js/voucher/*.js",
   ],
   theme: {
     extend: {
