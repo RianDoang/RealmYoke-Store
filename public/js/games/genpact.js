@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Print Order User
 let selectedDiamond = "-";
 let selectedPayment = "-";
-let selectedPrice = "-";
+let selectedPrice = "0";
 
 function selectDiamond(amount, price) {
   selectedDiamond = `${amount} Crystal`;

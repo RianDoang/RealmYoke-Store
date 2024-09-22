@@ -27,6 +27,21 @@ window.addEventListener("click", function (e) {
 });
 // End Hamburger menu
 
+// Region Section
+document.addEventListener("DOMContentLoaded", function () {
+  const regionSelect = document.getElementById("region");
+
+  regionSelect.addEventListener("change", function () {
+    const selectedRegion = regionSelect.value;
+    console.log("Region yang dipilih:", selectedRegion);
+
+    if (selectedRegion === "Asia") {
+      console.log("Asia dipilih secara default.");
+    }
+  });
+});
+// End Region Section
+
 // TopUp Toggle
 const diamondButtons = document.querySelector(".diamond-buttons");
 const diamondButtonsMenu = diamondButtons.querySelectorAll("button");
@@ -94,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
-
 // End E-Wallet Toggle
 
 // Print Order User
@@ -103,44 +117,46 @@ let selectedPayment = "-";
 let selectedPrice = "0";
 
 function selectDiamond(amount, price) {
-  selectedDiamond = `${amount} Tokens`;
-  selectedPrice = price; // Simpan harga yang dipilih
+  selectedDiamond = `${amount} Oneiric Shard`;
+  // Simpan harga yang dipilih
+  selectedPrice = price;
 }
-
 function selectPayment(paymentMethod) {
-  selectedPayment = paymentMethod; // Simpan hanya nama metode pembayaran
+  // Simpan hanya nama metode pembayaran
+  selectedPayment = paymentMethod;
 }
-
 function formatWhatsAppNumber(number) {
   // Format nomor WhatsApp dengan tanda - setiap 4 digit
   return number.replace(/(\d{4})(?=\d)/g, "$1-");
 }
 
-// Fungsi untuk membuat nomor transaksi unik
+// Membuat no. unik transaksi
 function generateTransactionId() {
-  const timestamp = Date.now().toString().slice(-10); // Ambil 10 digit terakhir dari timestamp
+  // Ambil 10 digit terakhir dari timestamp
+  const timestamp = Date.now().toString().slice(-10);
   const randomPart = Math.floor(Math.random() * 10000)
     .toString()
-    .padStart(4, "0"); // Bagian acak 4 digit
-  return `${timestamp}${randomPart}`; // Gabungkan timestamp (10 digit) dan angka acak (4 digit)
+    // Bagian acak 4 digit
+    .padStart(4, "0");
+  // Gabungkan timestamp (10 digit) dan angka acak (4 digit)
+  return `${timestamp}${randomPart}`;
 }
 
 function printOrder() {
   const userId = document.getElementById("userId").value;
+  const regionId = document.getElementById("region").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
-
   // Buat nomor transaksi unik
   const transactionId = generateTransactionId(userId);
-
   // Gabungkan userId dan zoneId
-  const userZoneId = `${userId}`;
-
+  const userZoneId = `${userId} | ${regionId}`;
   document.getElementById("userZoneIdDisplay").textContent = userZoneId;
   document.getElementById("nominalLayanan").textContent = selectedDiamond;
-  document.getElementById("paymentMethod").textContent = selectedPayment; // Tampilkan hanya nama metode pembayaran
+  document.getElementById("paymentMethod").textContent = selectedPayment;
   document.getElementById("totalPrice").textContent = `Rp${selectedPrice}`;
   document.getElementById("whatsappNumberDisplay").textContent =
-    formatWhatsAppNumber(whatsappNumber); // Format dan tampilkan nomor WhatsApp
+    // Format dan tampilkan nomor WhatsApp
+    formatWhatsAppNumber(whatsappNumber);
   document.getElementById(
     "transactionIdDisplay"
   ).textContent = `${transactionId}`;
@@ -198,7 +214,6 @@ orderNow.addEventListener("click", function () {
 });
 
 const cancelOrder = document.getElementById("cancelOrder");
-
 cancelOrder.addEventListener("click", function () {
   orderSummary.classList.add("opacity-0");
   orderSummary.classList.remove("opacity-100");
@@ -213,9 +228,10 @@ cancelOrder.addEventListener("click", function () {
 });
 // ENd Order Now Popup
 
-// Create Order
+// Create and send order
 document.getElementById("createOrder").addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
+  const zoneId = document.getElementById("zoneId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   // Format nomor WhatsApp yang akan dikirim
@@ -227,19 +243,19 @@ document.getElementById("createOrder").addEventListener("click", function () {
   // Ambil waktu saat order
   const orderTime = new Date();
   const day = String(orderTime.getDate()).padStart(2, "0");
-  const month = String(orderTime.getMonth() + 1).padStart(2, "0"); // Bulan dimulai dari 0
+  const month = String(orderTime.getMonth() + 1).padStart(2, "0");
   const year = orderTime.getFullYear();
   const hours = String(orderTime.getHours()).padStart(2, "0");
   const minutes = String(orderTime.getMinutes()).padStart(2, "0");
   const formattedOrderTime = `${day}/${month}/${year} (${hours}:${minutes})`;
 
-  // Format pesan yang akan dikirim ke WhatsApp
   const message =
     `*Detail Pembelian:*\n\n` +
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Free Fire\n` +
+    `*Kategori:* Mobile Legends\n` +
     `*User ID:* ${userId}\n` +
+    `*Zone ID:* ${zoneId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +
     `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
@@ -250,7 +266,6 @@ document.getElementById("createOrder").addEventListener("click", function () {
   const encodedMessage = encodeURIComponent(message);
   const url = `https://wa.me/6287776837873?text=${encodedMessage}`;
 
-  // Redirect ke WhatsApp
   window.location.href = url;
 });
-// End Create Order
+// End Create and send order
