@@ -117,7 +117,7 @@ let selectedPayment = "-";
 let selectedPrice = "-";
 
 function selectDiamond(amount, price) {
-  selectedDiamond = `${amount} Diamonds`;
+  selectedDiamond = `${amount} Crystal`;
   // Simpan harga yang dipilih
   selectedPrice = price;
 }

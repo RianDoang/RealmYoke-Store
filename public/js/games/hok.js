@@ -103,7 +103,7 @@ let selectedPayment = "-";
 let selectedPrice = "-";
 
 function selectDiamond(amount, price) {
-  selectedDiamond = `${amount} Diamonds`;
+  selectedDiamond = `${amount} Tokens`;
   selectedPrice = price; // Simpan harga yang dipilih
 }
 
@@ -133,7 +133,7 @@ function printOrder() {
   const transactionId = generateTransactionId(userId);
 
   // Gabungkan userId dan zoneId
-  const userZoneId = `(${userId})`;
+  const userZoneId = `${userId}`;
 
   document.getElementById("userZoneIdDisplay").textContent = userZoneId;
   document.getElementById("nominalLayanan").textContent = selectedDiamond;

@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Print Order User
 let selectedDiamond = "-";
 let selectedPayment = "-";
-let selectedPrice = "-";
+let selectedPrice = "0";
 
 function selectDiamond(amount, price) {
   selectedDiamond = `${amount} Diamonds`;
@@ -134,7 +134,7 @@ function printOrder() {
   const transactionId = generateTransactionId(userId);
 
   // Gabungkan userId dan zoneId
-  const userZoneId = `(${userId}) (${zoneId})`;
+  const userZoneId = `${userId} (${zoneId})`;
 
   document.getElementById("userZoneIdDisplay").textContent = userZoneId;
   document.getElementById("nominalLayanan").textContent = selectedDiamond;
@@ -242,8 +242,8 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
     `*Kategori:* Mobile Legends\n` +
-    `*User ID:* ${userId}\n` +
-    `*Zone ID:* ${zoneId}\n` +
+    `*UID:* ${userId}\n` +
+    `*Server:* ${zoneId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +
     `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
