@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../src/styles/output.css" />
-    <link rel="icon" href="../image/logoMobile.png" />
+    <link rel="stylesheet" href="../../../src/styles/output.css" />
+    <link rel="icon" href="../../image/logoMobile.png" />
 
     <!-- Font Awesome CDN -->
     <link
@@ -34,7 +34,7 @@
     >
       <div class="inline-block ml-5 md:ml-10">
         <img
-          src="../../public/image/logo2transparan.png"
+          src="../../../public/image/logo2transparan.png"
           alt="Icon"
           class="object-cover w-[60px]"
         />
@@ -48,7 +48,7 @@
           class="grid grid-cols-1 items-center justify-start md:gap-5 md:flex md:w-72"
         >
           <a
-            href="../../index.html"
+            href="../../../index.html"
             class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1 md:w-[30%]"
           >
             <div
@@ -59,7 +59,7 @@
             </div>
           </a>
           <a
-            href="../../index.html?triggerCek=true"
+            href="../../../index.html?triggerCek=true"
             class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1 md:w-[46%]"
           >
             <div
@@ -136,17 +136,17 @@
     >
       <div class="w-full flex items-center justify-center md:w-[35%]">
         <div class="w-[95%] rounded-lg p-4 pb-12 bg-slate-700 text-white">
-          <h1 class="text-lg font-semibold">Genshin Impact</h1>
+          <h1 class="text-lg font-semibold">Mobile Legends</h1>
           <p class="font-medium mt-2">Tutorial Topup</p>
           <ol
             class="list-decimal mt-2 font-medium flex flex-col gap-1 pl-5 md:pl-10"
           >
-            <li>Masukkan UID dan Server Genshin Impact</li>
-            <li>Pilih Paket/Nominal</li>
+            <li>Masukkan User ID dan Server Akun Mobile Legends</li>
+            <li>Pilih Nominal Diamond diinginkan</li>
             <li>Pilih Metode Pembayaran yang diinginkan</li>
             <li>Masukkan Nomor WhatsApp Aktif</li>
             <li>Klik 'Beli Sekarang' & Lakukan Pembayaran</li>
-            <li>Crystals akan segera masuk ke akun Anda.</li>
+            <li>Diamond akan segera masuk ke akun Anda.</li>
           </ol>
         </div>
       </div>
@@ -186,17 +186,20 @@
                 placeholder="Masukkan User ID"
                 class="w-[53%] px-3 py-3 text-sm outline-none rounded-xl md:py-2 md:text-base"
               />
-              <select
-                name="region"
-                id="region"
-                class="w-[45%] px-3 py-3 text-sm outline-none rounded-xl md:py-3 md:text-bases"
-              >
-                <option value="Asia" selected>Asia</option>
-                <option value="America">America</option>
-                <option value="Europe">Europe</option>
-                <option value="TW, HK, MO">TW, HK, MO</option>
-              </select>
+              <input
+                type="number"
+                id="zoneId"
+                required
+                placeholder="Masukkan Zone ID"
+                class="w-[45%] px-3 py-3 text-sm outline-none rounded-xl md:py-2 md:text-base"
+              />
             </div>
+            <p class="mt-3 text-xs text-gray-300">
+              Untuk mengetahui User ID Anda, silahkan klik menu profile dibagian
+              kiri atas pada menu utama game. User ID akan terlihat dibagian
+              bawah Nama karakter game Anda. Silahkan masukan User ID dan Server
+              ID Anda untuk menyelesaikan transaksi. Contoh: 12345678(1234).
+            </p>
           </div>
 
           <!-- 02 -->
@@ -231,97 +234,241 @@
               >
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('60', '13.000')"
+                  onclick="selectDiamond('86', '23.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">60 Crystal</p>
-                    <p class="text-sxs font-medium">Rp 13.000</p>
+                    <p class="text-xs font-semibold">86 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 23.000</p>
                   </span>
                   <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/topup/GenPact/Genshin-Impact_Crystals.webp"
-                      alt="Genshin Impact Crystal"
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('330', '59.000')"
+                  onclick="selectDiamond('172', '45.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">330 Crystal</p>
-                    <p class="text-sxs font-medium">Rp 59.000</p>
+                    <p class="text-xs font-semibold">172 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 45.000</p>
                   </span>
                   <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/topup/GenPact/Genshin-Impact_Crystals.webp"
-                      alt="Genshin Impact Crystal"
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('1090', '173.000')"
+                  onclick="selectDiamond('257', '67.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">1090 Crystal</p>
-                    <p class="text-sxs font-medium">Rp 173.000</p>
+                    <p class="text-xs font-semibold">257 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 67.000</p>
                   </span>
                   <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/topup/GenPact/Genshin-Impact_Crystals.webp"
-                      alt="Genshin Impact Crystal"
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('2.240', '375.000')"
+                  onclick="selectDiamond('344', '89.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">2.240 Crystal</p>
-                    <p class="text-sxs font-medium">Rp 375.000</p>
+                    <p class="text-xs font-semibold">344 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 89.000</p>
                   </span>
                   <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/topup/GenPact/Genshin-Impact_Crystals.webp"
-                      alt="Genshin Impact Crystal"
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('3.380', '574.000')"
+                  onclick="selectDiamond('429', '110.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">3.380 Crystal</p>
-                    <p class="text-sxs font-medium">Rp 574.000</p>
+                    <p class="text-xs font-semibold">429 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 110.000</p>
                   </span>
                   <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/topup/GenPact/Genshin-Impact_Crystals.webp"
-                      alt="Genshin Impact Crystal"
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('8080', '1.150.000')"
+                  onclick="selectDiamond('514', '132.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">8080 Crystal</p>
-                    <p class="text-sxs font-medium">Rp 1.150.000</p>
+                    <p class="text-xs font-semibold">514 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 132.000</p>
                   </span>
                   <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/topup/GenPact/Genshin-Impact_Crystals.webp"
-                      alt="Genshin Impact Crystal"
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('600', '153.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">600 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 153.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('706', '182.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">706 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 182.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('792', '199.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">792 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 199.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('878', '216.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">878 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 216.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('990', '250.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">990 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 250.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('1050', '264.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">1050 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 264.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('1220', '307.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">1220 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 307.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('1412', '350.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">1412 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 350.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
+                  /></span>
+                </button>
+
+                <button
+                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
+                  onclick="selectDiamond('2195', '511.000')"
+                  type="button"
+                >
+                  <span class="flex flex-col items-start justify-center gap-1">
+                    <p class="text-xs font-semibold">2195 Diamonds</p>
+                    <p class="text-sxs font-medium">Rp 511.000</p>
+                  </span>
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
+                    ><img
+                      src="../../../src/assets/topup/MLBB/MLBB Diamond.webp"
+                      alt="MLBB Diamond"
                   /></span>
                 </button>
               </div>
@@ -398,7 +545,7 @@
                     type="button"
                   >
                     <img
-                      src="../../src/assets/method/e-wallet/Ovo.png"
+                      src="../../../src/assets/method/e-wallet/Ovo.png"
                       alt="OVO Payment"
                       class="w-16"
                     />
@@ -412,7 +559,7 @@
                     type="button"
                   >
                     <img
-                      src="../../src/assets/method/e-wallet/SPpay.png"
+                      src="../../../src/assets/method/e-wallet/SPpay.png"
                       alt="ShopeePay Payment"
                       class="w-16"
                     />
@@ -428,7 +575,7 @@
                     type="button"
                   >
                     <img
-                      src="../../src/assets/method/e-wallet/gopay.png"
+                      src="../../../src/assets/method/e-wallet/gopay.png"
                       alt="Gopay Payment"
                       class="w-16"
                     />
@@ -445,17 +592,17 @@
                 class="w-full flex items-center justify-end gap-2 px-5 py-2 rounded-b-xl bg-white"
               >
                 <img
-                  src="../../src/assets/method/e-wallet/Ovo.png"
+                  src="../../../src/assets/method/e-wallet/Ovo.png"
                   alt="Ovo"
                   class="w-11"
                 />
                 <img
-                  src="../../src/assets/method/e-wallet/SPpay.png"
+                  src="../../../src/assets/method/e-wallet/SPpay.png"
                   alt="ShopeePay"
                   class="w-11"
                 />
                 <img
-                  src="../../src/assets/method/e-wallet/gopay.png"
+                  src="../../../src/assets/method/e-wallet/gopay.png"
                   alt="Gopay"
                   class="w-11"
                 />
@@ -494,7 +641,7 @@
               <p class="text-xs font-medium mt-2">
                 Dengan membeli otomatis saya menyutujui
                 <a
-                  href="../../index.html?triggerLicense=true"
+                  href="../../../index.html?triggerLicense=true"
                   class="text-amber-400 transition duration-150 hover:text-amber-500"
                   >Ketentuan Layanan.</a
                 >
@@ -540,7 +687,7 @@
             <tbody>
               <tr>
                 <td class="text-left py-1.5">Kategori:</td>
-                <td class="text-left py-1.5">Genshin Impact</td>
+                <td class="text-left py-1.5">Mobile Legends</td>
               </tr>
               <tr>
                 <td class="text-left py-1.5">Order:</td>
@@ -551,7 +698,7 @@
                 <td id="nickname" class="text-left py-1.5"></td>
               </tr> -->
               <tr>
-                <td class="text-left py-1.5">User ID & Region:</td>
+                <td class="text-left py-1.5">User ID & Server:</td>
                 <td id="userZoneIdDisplay" class="text-left py-1.5"></td>
               </tr>
               <tr>
@@ -628,7 +775,7 @@
           class="w-full h-56 flex flex-col items-start justify-center pr-5 md:w-1/2"
         >
           <img
-            src="../../public/image/logo2transparan.png"
+            src="../../../public/image/logo2transparan.png"
             alt=""
             class="object-cover w-28 md:w-36"
           />
@@ -649,14 +796,14 @@
             >
               <li>
                 <a
-                  href="../../index.html"
+                  href="../../../index.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Beranda</a
                 >
               </li>
               <li>
                 <a
-                  href="../../index.html?triggerCek=true"
+                  href="../../../index.html?triggerCek=true"
                   class="transition duration-150 text-slate-300 hover:text-white"
                 >
                   Cek Pesanan
@@ -671,7 +818,7 @@
             >
               <li>
                 <a
-                  href="../games/ml.html"
+                  href="#"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Mobile Legends</a
                 >
@@ -692,7 +839,7 @@
               </li>
               <li>
                 <a
-                  href="#"
+                  href="../games/genpact.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Genshin Impact</a
                 >
@@ -727,7 +874,7 @@
       >
         Copyright ©2024 RealmYoke Store. All Rights Reserved
         <a
-          href="../../index.html?triggerLicense=true"
+          href="../../../index.html?triggerLicense=true"
           class="text-amber-400 transition duration-150 ml-1 hover:text-amber-500"
         >
           Syarat & Ketentuan Pengguna
@@ -735,6 +882,6 @@
       </div>
     </footer>
 
-    <script src="../js/games/genpact.js"></script>
+    <script src="../../js/games/ml.js"></script>
   </body>
 </html>

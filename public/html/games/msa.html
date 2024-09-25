@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../src/styles/output.css" />
-    <link rel="icon" href="../image/logoMobile.png" />
+    <link rel="stylesheet" href="../../../src/styles/output.css" />
+    <link rel="icon" href="../../image/logoMobile.png" />
 
     <!-- Font Awesome CDN -->
     <link
@@ -34,7 +34,7 @@
     >
       <div class="inline-block ml-5 md:ml-10">
         <img
-          src="../../public/image/logo2transparan.png"
+          src="../../../public/image/logo2transparan.png"
           alt="Icon"
           class="object-cover w-[60px]"
         />
@@ -48,7 +48,7 @@
           class="grid grid-cols-1 items-center justify-start md:gap-5 md:flex md:w-72"
         >
           <a
-            href="../../index.html"
+            href="../../../index.html"
             class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1 md:w-[30%]"
           >
             <div
@@ -59,7 +59,7 @@
             </div>
           </a>
           <a
-            href="../../index.html?triggerCek=true"
+            href="../../../index.html?triggerCek=true"
             class="w-full flex flex-col py-1.5 items-center transition duration-150 hover:bg-gray-600 after:mt-0 after:bg-transparent after:transition after:duration-100 after:h-0.5 after:w-full after:flex-col after:rounded-full md:hover:bg-transparent md:hover:after:bg-amber-500 md:after:mt-1 md:w-[46%]"
           >
             <div
@@ -136,17 +136,17 @@
     >
       <div class="w-full flex items-center justify-center md:w-[35%]">
         <div class="w-[95%] rounded-lg p-4 pb-12 bg-slate-700 text-white">
-          <h1 class="text-lg font-semibold">Steam Wallet (IDR)</h1>
+          <h1 class="text-lg font-semibold">Metal Slug Awakening</h1>
           <p class="font-medium mt-2">Tutorial Topup</p>
           <ol
             class="list-decimal mt-2 font-medium flex flex-col gap-1 pl-5 md:pl-10"
           >
-            <li>Tujuan di isi dengan No. HP</li>
-            <li>Pilih Voucher</li>
-            <li>Pilih Pembayaran</li>
+            <li>Masukkan ID</li>
+            <li>Pilih Nominal Ruby diinginkan</li>
+            <li>Pilih Metode Pembayaran yang diinginkan</li>
             <li>Masukkan Nomor WhatsApp Aktif</li>
             <li>Klik 'Beli Sekarang' & Lakukan Pembayaran</li>
-            <li>Voucher akan muncul di halaman invoice</li>
+            <li>Ruby akan segera masuk ke akun Anda.</li>
           </ol>
         </div>
       </div>
@@ -183,10 +183,13 @@
                 type="number"
                 id="userId"
                 required
-                placeholder="Masukkan No. Handphone"
+                placeholder="Masukkan Role ID"
                 class="w-full px-3 py-3 text-sm outline-none rounded-xl md:py-2 md:text-base"
               />
             </div>
+            <p class="mt-3 text-xs text-gray-300">
+              Contoh ID: 128481538385953.
+            </p>
           </div>
 
           <!-- 02 -->
@@ -221,161 +224,97 @@
               >
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('6.000', '8.000')"
+                  onclick="selectDiamond('60', '14.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 6.000</p>
-                    <p class="text-sxs font-medium">Rp 8.000</p>
+                    <p class="text-xs font-semibold">60 Ruby</p>
+                    <p class="text-sxs font-medium">Rp 14.000</p>
                   </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
+                      src="../../../src/assets/topup/MSA/icon-Ruby.webp"
+                      alt="MSA Ruby"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('8.000', '9.000')"
+                  onclick="selectDiamond('319', '64.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 8.000</p>
-                    <p class="text-sxs font-medium">Rp 9.000</p>
+                    <p class="text-xs font-semibold">319 Ruby</p>
+                    <p class="text-sxs font-medium">Rp 64.000</p>
                   </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
+                      src="../../../src/assets/topup/MSA/icon-Ruby.webp"
+                      alt="MSA Ruby"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('12.000', '13.000')"
+                  onclick="selectDiamond('630', '117.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 12.000</p>
-                    <p class="text-sxs font-medium">Rp 13.000</p>
+                    <p class="text-xs font-semibold">630 Ruby</p>
+                    <p class="text-sxs font-medium">Rp 117.000</p>
                   </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
+                      src="../../../src/assets/topup/MSA/icon-Ruby.webp"
+                      alt="MSA Ruby"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('45.000', '46.000')"
+                  onclick="selectDiamond('1300', '230.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 45.000</p>
-                    <p class="text-sxs font-medium">Rp 46.000</p>
+                    <p class="text-xs font-semibold">1300 Ruby</p>
+                    <p class="text-sxs font-medium">Rp 230.000</p>
                   </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
+                      src="../../../src/assets/topup/MSA/icon-Ruby.webp"
+                      alt="MSA Ruby"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('60.000', '61.000')"
+                  onclick="selectDiamond('3200', '590.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 60.000</p>
-                    <p class="text-sxs font-medium">Rp 61.000</p>
+                    <p class="text-xs font-semibold">3200 Ruby</p>
+                    <p class="text-sxs font-medium">Rp 590.000</p>
                   </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
+                      src="../../../src/assets/topup/MSA/icon-Ruby.webp"
+                      alt="MSA Ruby"
                   /></span>
                 </button>
 
                 <button
                   class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('90.000', '91.000')"
+                  onclick="selectDiamond('6500', '1.145.000')"
                   type="button"
                 >
                   <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 90.000</p>
-                    <p class="text-sxs font-medium">Rp 91.000</p>
+                    <p class="text-xs font-semibold">6500 Ruby</p>
+                    <p class="text-sxs font-medium">Rp 1.145.000</p>
                   </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
+                  <span class="object-cover w-7 hidden md:flex lg:w-10"
                     ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
-                  /></span>
-                </button>
-
-                <button
-                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('120.000', '121.000')"
-                  type="button"
-                >
-                  <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 120.000</p>
-                    <p class="text-sxs font-medium">Rp 121.000</p>
-                  </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
-                    ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
-                  /></span>
-                </button>
-
-                <button
-                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('250.000', '252.000')"
-                  type="button"
-                >
-                  <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 250.000</p>
-                    <p class="text-sxs font-medium">Rp 252.000</p>
-                  </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
-                    ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
-                  /></span>
-                </button>
-
-                <button
-                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('400.000', '396.000')"
-                  type="button"
-                >
-                  <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 400.000</p>
-                    <p class="text-sxs font-medium">Rp 396.000</p>
-                  </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
-                    ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
-                  /></span>
-                </button>
-
-                <button
-                  class="w-[45%] flex items-center justify-between p-3 rounded-lg border-2 border-slate-800 bg-slate-800 transition duration-150 md:w-[45%] lg:w-[30%]"
-                  onclick="selectDiamond('600.000', '602.000')"
-                  type="button"
-                >
-                  <span class="flex flex-col items-start justify-center gap-1">
-                    <p class="text-xs font-semibold">IDR 600.000</p>
-                    <p class="text-sxs font-medium">Rp 602.000</p>
-                  </span>
-                  <span class="object-cover w-7 hidden md:flex lg:w-9"
-                    ><img
-                      src="../../src/assets/voucher/steam wallet.png"
-                      alt="Steam Wallet IDR"
+                      src="../../../src/assets/topup/MSA/icon-Ruby.webp"
+                      alt="MSA Ruby"
                   /></span>
                 </button>
               </div>
@@ -452,7 +391,7 @@
                     type="button"
                   >
                     <img
-                      src="../../src/assets/method/e-wallet/Ovo.png"
+                      src="../../../src/assets/method/e-wallet/Ovo.png"
                       alt="OVO Payment"
                       class="w-16"
                     />
@@ -466,7 +405,7 @@
                     type="button"
                   >
                     <img
-                      src="../../src/assets/method/e-wallet/SPpay.png"
+                      src="../../../src/assets/method/e-wallet/SPpay.png"
                       alt="ShopeePay Payment"
                       class="w-16"
                     />
@@ -482,7 +421,7 @@
                     type="button"
                   >
                     <img
-                      src="../../src/assets/method/e-wallet/gopay.png"
+                      src="../../../src/assets/method/e-wallet/gopay.png"
                       alt="Gopay Payment"
                       class="w-16"
                     />
@@ -499,17 +438,17 @@
                 class="w-full flex items-center justify-end gap-2 px-5 py-2 rounded-b-xl bg-white"
               >
                 <img
-                  src="../../src/assets/method/e-wallet/Ovo.png"
+                  src="../../../src/assets/method/e-wallet/Ovo.png"
                   alt="Ovo"
                   class="w-11"
                 />
                 <img
-                  src="../../src/assets/method/e-wallet/SPpay.png"
+                  src="../../../src/assets/method/e-wallet/SPpay.png"
                   alt="ShopeePay"
                   class="w-11"
                 />
                 <img
-                  src="../../src/assets/method/e-wallet/gopay.png"
+                  src="../../../src/assets/method/e-wallet/gopay.png"
                   alt="Gopay"
                   class="w-11"
                 />
@@ -548,7 +487,7 @@
               <p class="text-xs font-medium mt-2">
                 Dengan membeli otomatis saya menyutujui
                 <a
-                  href="../../index.html?triggerLicense=true"
+                  href="../../../index.html?triggerLicense=true"
                   class="text-amber-400 transition duration-150 hover:text-amber-500"
                   >Ketentuan Layanan.</a
                 >
@@ -594,7 +533,7 @@
             <tbody>
               <tr>
                 <td class="text-left py-1.5">Kategori:</td>
-                <td class="text-left py-1.5">Steam Wallet IDR</td>
+                <td class="text-left py-1.5">Metal Slug Awakening</td>
               </tr>
               <tr>
                 <td class="text-left py-1.5">Order:</td>
@@ -605,7 +544,7 @@
                 <td id="nickname" class="text-left py-1.5"></td>
               </tr> -->
               <tr>
-                <td class="text-left py-1.5">No. Wallet:</td>
+                <td class="text-left py-1.5">Role ID:</td>
                 <td id="userZoneIdDisplay" class="text-left py-1.5"></td>
               </tr>
               <tr>
@@ -682,7 +621,7 @@
           class="w-full h-56 flex flex-col items-start justify-center pr-5 md:w-1/2"
         >
           <img
-            src="../../public/image/logo2transparan.png"
+            src="../../../public/image/logo2transparan.png"
             alt=""
             class="object-cover w-28 md:w-36"
           />
@@ -703,14 +642,14 @@
             >
               <li>
                 <a
-                  href="../../index.html"
+                  href="../../../index.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Beranda</a
                 >
               </li>
               <li>
                 <a
-                  href="../../index.html?triggerCek=true"
+                  href="../../../index.html?triggerCek=true"
                   class="transition duration-150 text-slate-300 hover:text-white"
                 >
                   Cek Pesanan
@@ -781,7 +720,7 @@
       >
         Copyright ©2024 RealmYoke Store. All Rights Reserved
         <a
-          href="../../index.html?triggerLicense=true"
+          href="../../../index.html?triggerLicense=true"
           class="text-amber-400 transition duration-150 ml-1 hover:text-amber-500"
         >
           Syarat & Ketentuan Pengguna
@@ -789,6 +728,6 @@
       </div>
     </footer>
 
-    <script src="../js/voucher/steam.js"></script>
+    <script src="../../js/games/msa.js"></script>
   </body>
 </html>
