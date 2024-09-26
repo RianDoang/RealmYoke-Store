@@ -3,8 +3,8 @@ module.exports = {
   content: [
     "./index.html",
     "./public/js/main.js",
-    "./public/games/*.html",
-    "./public/voucher/*.html",
+    "./public/html/games/*.html",
+    "./public/html/voucher/*.html",
     "./public/js/games/*.js",
     "./public/js/voucher/*.js",
   ],

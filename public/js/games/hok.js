@@ -238,7 +238,7 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `*Detail Pembelian:*\n\n` +
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Free Fire\n` +
+    `*Kategori:* Honor of Kings\n` +
     `*User ID:* ${userId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +

@@ -231,7 +231,7 @@ cancelOrder.addEventListener("click", function () {
 // Create and send order
 document.getElementById("createOrder").addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
-  const zoneId = document.getElementById("zoneId").value;
+  const regionId = document.getElementById("region").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   // Format nomor WhatsApp yang akan dikirim
@@ -253,9 +253,9 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `*Detail Pembelian:*\n\n` +
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Mobile Legends\n` +
-    `*User ID:* ${userId}\n` +
-    `*Zone ID:* ${zoneId}\n` +
+    `*Kategori:* Genshin Impact\n` +
+    `*UID:* ${userId}\n` +
+    `*Region ID:* ${regionId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +
     `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +

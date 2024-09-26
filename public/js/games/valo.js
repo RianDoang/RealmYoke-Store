@@ -239,7 +239,7 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
     `*Kategori:* Valorant ID\n` +
-    `*User ID:* ${userId}\n` +
+    `*Riot ID:* ${userId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +
     `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +

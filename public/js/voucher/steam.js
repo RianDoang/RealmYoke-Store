@@ -238,8 +238,8 @@ document.getElementById("createOrder").addEventListener("click", function () {
     `*Detail Pembelian:*\n\n` +
     `${formattedOrderTime}\n\n` +
     `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Free Fire\n` +
-    `*User ID:* ${userId}\n` +
+    `*Kategori:* Steam Voucher ID\n` +
+    `*No. Steam:* ${userId}\n` +
     `*Order:* ${selectedDiamond}\n` +
     `*Pembayaran:* ${selectedPayment}\n` +
     `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
