@@ -1,7 +1,7 @@
 {
   "name": "realmyoke-store",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./public/js/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx tailwindcss -i ./public/css/input.css -o ./src/styles/output.css --watch"

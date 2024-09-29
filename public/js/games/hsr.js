@@ -142,12 +142,16 @@ function generateTransactionId() {
   return `${timestamp}${randomPart}`;
 }
 
+let transactionId;
+
 function printOrder() {
   const userId = document.getElementById("userId").value;
   const regionId = document.getElementById("region").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
+
   // Buat nomor transaksi unik
-  const transactionId = generateTransactionId(userId);
+  transactionId = generateTransactionId();
+
   // Gabungkan userId dan zoneId
   const userZoneId = `${userId} | ${regionId}`;
   document.getElementById("userZoneIdDisplay").textContent = userZoneId;
@@ -236,9 +240,6 @@ document.getElementById("createOrder").addEventListener("click", function () {
 
   // Format nomor WhatsApp yang akan dikirim
   const formattedWhatsAppNumber = formatWhatsAppNumber(whatsappNumber);
-
-  // Buat nomor transaksi
-  const transactionId = generateTransactionId();
 
   // Ambil waktu saat order
   const orderTime = new Date();

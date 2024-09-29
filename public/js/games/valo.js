@@ -125,12 +125,14 @@ function generateTransactionId() {
   return `${timestamp}${randomPart}`; // Gabungkan timestamp (10 digit) dan angka acak (4 digit)
 }
 
+let transactionId;
+
 function printOrder() {
   const userId = document.getElementById("userId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   // Buat nomor transaksi unik
-  const transactionId = generateTransactionId(userId);
+  transactionId = generateTransactionId();
 
   // Gabungkan userId dan zoneId
   const userZoneId = `${userId}`;
@@ -220,9 +222,6 @@ document.getElementById("createOrder").addEventListener("click", function () {
 
   // Format nomor WhatsApp yang akan dikirim
   const formattedWhatsAppNumber = formatWhatsAppNumber(whatsappNumber);
-
-  // Buat nomor transaksi
-  const transactionId = generateTransactionId();
 
   // Ambil waktu saat order
   const orderTime = new Date();

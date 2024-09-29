@@ -116,13 +116,19 @@ function formatWhatsAppNumber(number) {
   return number.replace(/(\d{4})(?=\d)/g, "$1-");
 }
 
-// Fungsi untuk membuat nomor transaksi unik
+let transactionId;
+
 function generateTransactionId() {
-  const timestamp = Date.now().toString().slice(-10); // Ambil 10 digit terakhir dari timestamp
+  // Ambil 10 digit terakhir dari timestamp
+  const timestamp = Date.now().toString().slice(-10);
   const randomPart = Math.floor(Math.random() * 10000)
     .toString()
-    .padStart(4, "0"); // Bagian acak 4 digit
-  return `${timestamp}${randomPart}`; // Gabungkan timestamp (10 digit) dan angka acak (4 digit)
+
+    // Bagian acak 4 digit
+    .padStart(4, "0");
+
+  // Gabungkan timestamp (10 digit) dan angka acak (4 digit)
+  return `${timestamp}${randomPart}`;
 }
 
 function printOrder() {
@@ -131,7 +137,7 @@ function printOrder() {
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   // Buat nomor transaksi unik
-  const transactionId = generateTransactionId(userId);
+  transactionId = generateTransactionId();
 
   // Gabungkan userId dan zoneId
   const userZoneId = `${userId} (${zoneId})`;
@@ -141,7 +147,7 @@ function printOrder() {
   document.getElementById("paymentMethod").textContent = selectedPayment; // Tampilkan hanya nama metode pembayaran
   document.getElementById("totalPrice").textContent = `Rp${selectedPrice}`;
   document.getElementById("whatsappNumberDisplay").textContent =
-    formatWhatsAppNumber(whatsappNumber); // Format dan tampilkan nomor WhatsApp
+    formatWhatsAppNumber(whatsappNumber);
   document.getElementById(
     "transactionIdDisplay"
   ).textContent = `${transactionId}`;
@@ -224,9 +230,6 @@ document.getElementById("createOrder").addEventListener("click", function () {
   // Format nomor WhatsApp yang akan dikirim
   const formattedWhatsAppNumber = formatWhatsAppNumber(whatsappNumber);
 
-  // Buat nomor transaksi
-  const transactionId = generateTransactionId();
-
   // Ambil waktu saat order
   const orderTime = new Date();
   const day = String(orderTime.getDate()).padStart(2, "0");
@@ -234,7 +237,7 @@ document.getElementById("createOrder").addEventListener("click", function () {
   const year = orderTime.getFullYear();
   const hours = String(orderTime.getHours()).padStart(2, "0");
   const minutes = String(orderTime.getMinutes()).padStart(2, "0");
-  const formattedOrderTime = `${day}/${month}/${year} (${hours}:${minutes})`;
+  const formattedOrderTime = `${day}/${month}/${year}\n(${hours}:${minutes})`;
 
   // Format pesan yang akan dikirim ke WhatsApp
   const message =
