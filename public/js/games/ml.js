@@ -258,6 +258,6 @@ document.getElementById("createOrder").addEventListener("click", function () {
   const url = `https://wa.me/6287776837873?text=${encodedMessage}`;
 
   // Redirect ke WhatsApp
-  window.location.href = url;
+  window.open(url, "_blank");
 });
 // End Create Order

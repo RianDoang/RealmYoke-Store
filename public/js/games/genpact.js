@@ -267,6 +267,6 @@ document.getElementById("createOrder").addEventListener("click", function () {
   const encodedMessage = encodeURIComponent(message);
   const url = `https://wa.me/6287776837873?text=${encodedMessage}`;
 
-  window.location.href = url;
+  window.open(url, "_blank");
 });
 // End Create and send order
