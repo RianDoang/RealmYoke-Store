@@ -153,34 +153,20 @@ function printOrder() {
 // Order Now Popup
 const orderNow = document.getElementById("orderNow");
 const orderSummary = document.getElementById("orderSummary");
-const alertForm = document.getElementById("alertForm");
+const form = document.querySelector("form");
 
 orderNow.addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
   const whatsappNumber = document.getElementById("whatsappNumber").value;
 
   if (!userId || !whatsappNumber) {
-    alertForm.classList.remove("hidden");
-    alertForm.classList.add("flex");
-
-    setTimeout(() => {
-      alertForm.classList.remove("opacity-0");
-      alertForm.classList.add("opacity-100");
-      alertForm.classList.remove("translate-x-96");
-      alertForm.classList.add("translate-x-0");
-    }, 300);
-
-    setTimeout(() => {
-      alertForm.classList.add("opacity-0");
-      alertForm.classList.remove("opacity-100");
-      alertForm.classList.add("translate-x-96");
-      alertForm.classList.remove("translate-x-0");
-    }, 5000);
-
-    setTimeout(() => {
-      alertForm.classList.add("hidden");
-      alertForm.classList.remove("flex");
-    }, 5300);
+    Swal.fire({
+      title: "Error!",
+      text: "Pastikan tidak ada yang kosong!",
+      icon: "error",
+      confirmButtonColor: "#ef4444",
+      confirmButtonText: "Close",
+    });
 
     console.log("not allowed");
   } else {
@@ -217,39 +203,44 @@ cancelOrder.addEventListener("click", function () {
 
 // Create Order
 document.getElementById("createOrder").addEventListener("click", function () {
-  const userId = document.getElementById("userId").value;
-  const whatsappNumber = document.getElementById("whatsappNumber").value;
+  orderSummary.classList.add("opacity-0");
+  orderSummary.classList.remove("opacity-100");
+  orderSummary.classList.add("-translate-y-10");
+  orderSummary.classList.remove("translate-y-0");
+  setTimeout(() => {
+    orderSummary.classList.remove("flex");
+    orderSummary.classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }, 200);
 
-  // Format nomor WhatsApp yang akan dikirim
-  const formattedWhatsAppNumber = formatWhatsAppNumber(whatsappNumber);
+  setTimeout(() => {
+    Swal.fire({
+      title: "Success!",
+      text: "Order berhasil terbuat!",
+      icon: "success",
+      confirmButtonColor: "#22c55e",
+      confirmButtonText: "Back",
+    }).then(() => {
+      form.reset();
 
-  // Ambil waktu saat order
-  const orderTime = new Date();
-  const day = String(orderTime.getDate()).padStart(2, "0");
-  const month = String(orderTime.getMonth() + 1).padStart(2, "0"); // Bulan dimulai dari 0
-  const year = orderTime.getFullYear();
-  const hours = String(orderTime.getHours()).padStart(2, "0");
-  const minutes = String(orderTime.getMinutes()).padStart(2, "0");
-  const formattedOrderTime = `${day}/${month}/${year} (${hours}:${minutes})`;
+      const diamondButtons = document.querySelectorAll(
+        ".diamond-buttons button"
+      );
+      diamondButtons.forEach((button) => {
+        button.classList.remove("bg-amber-500");
+        button.classList.add("bg-slate-800");
+        button.classList.remove("border-amber-700");
+        button.classList.add("border-slate-800");
+      });
 
-  // Format pesan yang akan dikirim ke WhatsApp
-  const message =
-    `*Detail Pembelian:*\n\n` +
-    `${formattedOrderTime}\n\n` +
-    `*No. Transaksi:* ${transactionId}\n` +
-    `*Kategori:* Valorant ID\n` +
-    `*Riot ID:* ${userId}\n` +
-    `*Order:* ${selectedDiamond}\n` +
-    `*Pembayaran:* ${selectedPayment}\n` +
-    `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
-    `*Total Harga:* *Rp${selectedPrice}*\n\n` +
-    `Terima kasih telah melakukan pemesanan.`;
+      const paymentButtons = eWalletMenu.querySelectorAll(".payment-method");
+      paymentButtons.forEach((btn) => {
+        btn.classList.remove("border-amber-600");
+        btn.classList.add("border-slate-800");
+      });
 
-  // Encode URL
-  const encodedMessage = encodeURIComponent(message);
-  const url = `https://wa.me/6287776837873?text=${encodedMessage}`;
-
-  // Redirect ke WhatsApp
-  window.open(url, "_blank");
+      document.getElementById("eWallet").click();
+    });
+  }, 300);
 });
 // End Create Order

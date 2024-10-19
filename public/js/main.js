@@ -331,18 +331,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // End Fungsi luar href
 
-// Fungsi check order
-const checkOrderButton = document.getElementById("checkOrder");
-const transactionNumberInput = document.getElementById("transactionNumber");
-
-checkOrderButton.addEventListener("click", () => {
-  const transactionNumber = transactionNumberInput.value;
-  if (transactionNumber) {
-    const message = `Check order\n> ${transactionNumber}`;
-    const whatsappUrl = `https://wa.me/6287776837873?text=${encodeURIComponent(
-      message
-    )}`;
-    window.open(whatsappUrl, "_blank");
-  } 
-});
-// End Fungsi check order
