@@ -27,24 +27,6 @@ window.addEventListener("click", function (e) {
 });
 // End Hamburger menu
 
-// Panel User
-const panelUser = document.getElementById("panelUser");
-const panelUserHover = document.getElementById("panelUserHover");
-
-panelUser.addEventListener("click", function (e) {
-  e.stopPropagation();
-  panelUserHover.classList.toggle("hidden");
-  panelUserHover.classList.toggle("flex");
-});
-
-window.addEventListener("click", function (e) {
-  if (e.target != panelUser) {
-    panelUserHover.classList.add("hidden");
-    panelUserHover.classList.remove("flex");
-  }
-});
-// End Panel User
-
 // Region Section
 document.addEventListener("DOMContentLoaded", function () {
   const regionSelect = document.getElementById("region");
