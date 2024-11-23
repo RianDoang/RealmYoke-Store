@@ -56,6 +56,24 @@ checkOrderLink.addEventListener("click", function () {
 });
 // End Navbar Menu
 
+// Panel User
+const panelUser = document.getElementById("panelUser");
+const panelUserHover = document.getElementById("panelUserHover");
+
+panelUser.addEventListener("click", function (e) {
+  e.stopPropagation();
+  panelUserHover.classList.toggle("hidden");
+  panelUserHover.classList.toggle("flex");
+});
+
+window.addEventListener("click", function (e) {
+  if (e.target != panelUser) {
+    panelUserHover.classList.add("hidden");
+    panelUserHover.classList.remove("flex");
+  }
+});
+// End Panel User
+
 // Cek pesanan
 const menuList = document.getElementById("menuList");
 const paymentList = document.getElementById("paymentList");
@@ -331,3 +349,93 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // End Fungsi luar href
 
+// Fungsi check order
+const checkOrderButton = document.getElementById("checkOrder");
+const transactionNumberInput = document.getElementById("transactionNumber");
+const alertContactError = document.getElementById("alertContactError");
+const statusOrder = document.getElementById("statusOrder");
+const closeContactError = document.getElementById("closeContactError");
+
+closeContactError.addEventListener("click", function () {
+  alertContactError.classList.toggle("hidden");
+});
+
+checkOrderButton.addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  const transactionNumber = transactionNumberInput.value.trim();
+
+  if (transactionNumber) {
+    try {
+      // Tampilkan pesan pencarian
+      alertContactError.classList.add("flex");
+      alertContactError.classList.remove("hidden");
+
+      alertContactError.classList.add("text-gray-500");
+      alertContactError.classList.remove(
+        "text-red-500",
+        "text-green-500",
+        "text-yellow-500"
+      );
+
+      statusOrder.innerHTML = `Mencari transaksi ${transactionNumber}`;
+
+      // Kirim permintaan ke server
+      const response = await fetch(
+        `http://localhost:3000/order/status?transactionNumber=${transactionNumber}`
+      );
+
+      // Tangani respons dari server
+      if (response.ok) {
+        const order = await response.json();
+        const status = order.data.status;
+        // console.log("Order ditemukan:", order);
+
+        // Perbarui tampilan berdasarkan status order
+        setTimeout(() => {
+          if (status === "Success✅") {
+            console.log("Transaksi success");
+
+            alertContactError.classList.add("text-green-500");
+            statusOrder.innerHTML = `Transaction ${transactionNumber} <i>(${status})</i>`;
+          } else if (status === "Pending⌛") {
+            console.log("Transaksi pending");
+
+            alertContactError.classList.add("text-yellow-500");
+            statusOrder.innerHTML = `Transaction ${transactionNumber} <i>(${status})</i>`;
+          } else if (order && status && status.includes("Denied❌")) {
+            alertContactError.classList.add("text-red-500");
+            statusOrder.innerHTML = `Transaction ${transactionNumber} <i>(${status})</i>`;
+          }
+
+          // Reset input setelah pencarian
+          transactionNumberInput.value = "";
+        }, 1000);
+      } else if (response.status === 404) {
+        // Jika nomor transaksi tidak ditemukan
+        statusOrder.innerHTML = `Order tidak ditemukan.`;
+        alertContactError.classList.add("text-red-500");
+      } else {
+        // Tangani kesalahan lainnya
+        statusOrder.innerHTML = "Terjadi kesalahan. Coba lagi nanti.";
+        alertContactError.classList.add("text-red-500");
+      }
+    } catch (error) {
+      // Tangani kesalahan koneksi atau lainnya
+      console.error("Error fetching orders:", error);
+
+      alertContactError.classList.add("text-red-500");
+      statusOrder.innerHTML = `Terjadi kesalahan saat mengambil data pesanan.`;
+    }
+  } else {
+    // Jika nomor transaksi kosong
+    alertContactError.classList.add("flex");
+    alertContactError.classList.remove("hidden");
+
+    alertContactError.classList.add("text-red-500");
+    alertContactError.classList.remove("text-green-500", "text-yellow-500");
+
+    statusOrder.innerHTML = `Masukkan nomor transaksi anda`;
+  }
+});
+// End Fungsi check order

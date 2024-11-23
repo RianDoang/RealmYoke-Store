@@ -27,6 +27,24 @@ window.addEventListener("click", function (e) {
 });
 // End Hamburger menu
 
+// Panel User
+const panelUser = document.getElementById("panelUser");
+const panelUserHover = document.getElementById("panelUserHover");
+
+panelUser.addEventListener("click", function (e) {
+  e.stopPropagation();
+  panelUserHover.classList.toggle("hidden");
+  panelUserHover.classList.toggle("flex");
+});
+
+window.addEventListener("click", function (e) {
+  if (e.target != panelUser) {
+    panelUserHover.classList.add("hidden");
+    panelUserHover.classList.remove("flex");
+  }
+});
+// End Panel User
+
 // TopUp Toggle
 const diamondButtons = document.querySelector(".diamond-buttons");
 const diamondButtonsMenu = diamondButtons.querySelectorAll("button");
@@ -153,7 +171,7 @@ function printOrder() {
 // Order Now Popup
 const orderNow = document.getElementById("orderNow");
 const orderSummary = document.getElementById("orderSummary");
-const form = document.querySelector("form");
+const alertForm = document.getElementById("alertForm");
 
 orderNow.addEventListener("click", function () {
   const userId = document.getElementById("userId").value;
@@ -203,44 +221,39 @@ cancelOrder.addEventListener("click", function () {
 
 // Create Order
 document.getElementById("createOrder").addEventListener("click", function () {
-  orderSummary.classList.add("opacity-0");
-  orderSummary.classList.remove("opacity-100");
-  orderSummary.classList.add("-translate-y-10");
-  orderSummary.classList.remove("translate-y-0");
-  setTimeout(() => {
-    orderSummary.classList.remove("flex");
-    orderSummary.classList.add("hidden");
-    document.body.classList.remove("overflow-hidden");
-  }, 200);
+  const userId = document.getElementById("userId").value;
+  const whatsappNumber = document.getElementById("whatsappNumber").value;
 
-  setTimeout(() => {
-    Swal.fire({
-      title: "Success!",
-      text: "Order berhasil terbuat!",
-      icon: "success",
-      confirmButtonColor: "#22c55e",
-      confirmButtonText: "Back",
-    }).then(() => {
-      form.reset();
+  // Format nomor WhatsApp yang akan dikirim
+  const formattedWhatsAppNumber = formatWhatsAppNumber(whatsappNumber);
 
-      const diamondButtons = document.querySelectorAll(
-        ".diamond-buttons button"
-      );
-      diamondButtons.forEach((button) => {
-        button.classList.remove("bg-amber-500");
-        button.classList.add("bg-slate-800");
-        button.classList.remove("border-amber-700");
-        button.classList.add("border-slate-800");
-      });
+  // Ambil waktu saat order
+  const orderTime = new Date();
+  const day = String(orderTime.getDate()).padStart(2, "0");
+  const month = String(orderTime.getMonth() + 1).padStart(2, "0"); // Bulan dimulai dari 0
+  const year = orderTime.getFullYear();
+  const hours = String(orderTime.getHours()).padStart(2, "0");
+  const minutes = String(orderTime.getMinutes()).padStart(2, "0");
+  const formattedOrderTime = `${day}/${month}/${year} (${hours}:${minutes})`;
 
-      const paymentButtons = eWalletMenu.querySelectorAll(".payment-method");
-      paymentButtons.forEach((btn) => {
-        btn.classList.remove("border-amber-600");
-        btn.classList.add("border-slate-800");
-      });
+  // Format pesan yang akan dikirim ke WhatsApp
+  const message =
+    `*Detail Pembelian:*\n\n` +
+    `${formattedOrderTime}\n\n` +
+    `*No. Transaksi:* ${transactionId}\n` +
+    `*Kategori:* Honor of Kings\n` +
+    `*User ID:* ${userId}\n` +
+    `*Order:* ${selectedDiamond}\n` +
+    `*Pembayaran:* ${selectedPayment}\n` +
+    `*No. WhatsApp:* ${formattedWhatsAppNumber}\n\n` +
+    `*Total Harga:* *Rp${selectedPrice}*\n\n` +
+    `Terima kasih telah melakukan pemesanan.`;
 
-      document.getElementById("eWallet").click();
-    });
-  }, 300);
+  // Encode URL
+  const encodedMessage = encodeURIComponent(message);
+  const url = `https://wa.me/6287776837873?text=${encodedMessage}`;
+
+  // Redirect ke WhatsApp
+  window.open(url, "_blank");
 });
 // End Create Order

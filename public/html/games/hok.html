@@ -31,6 +31,7 @@
       terbaik di Indonesia
     </title>
   </head>
+
   <body class="bg-slate-900 font-montserrat">
     <nav
       class="w-full flex items-center justify-between bg-slate-800 h-[67px] fixed top-0 z-10 font-medium"
@@ -45,7 +46,7 @@
 
       <div
         id="navMenu"
-        class="hidden grid-cols-1 absolute top-20 right-5 w-56 py-2 rounded-lg bg-gray-700 border border-gray-500 opacity-0 -translate-y-5 transition duration-150 md:opacity-100 md:translate-y-0 md:border-transparent md:p-0 md:w-[80%] md:flex md:items-center md:justify-between md:bg-transparent md:top-3.5 md:right-8 lg:w-[85%]"
+        class="hidden grid-cols-1 absolute top-20 right-5 w-[230px] py-2 rounded-lg bg-gray-700 border border-gray-500 opacity-0 -translate-y-5 transition duration-150 md:opacity-100 md:translate-y-0 md:border-transparent md:p-0 md:w-[80%] md:flex md:items-center md:justify-between md:bg-transparent md:top-3.5 md:right-8 lg:w-[85%]"
       >
         <div
           class="grid grid-cols-1 items-center justify-start md:gap-5 md:flex md:w-72"
@@ -75,46 +76,23 @@
         </div>
         <span class="w-full flex h-[0.5px] bg-gray-600 my-1 md:hidden"></span>
         <ul
-          class="grid grid-cols-1 text-sm text-white items-center justify-start md:gap-5 md:flex"
+          class="grid grid-cols-1 text-sm text-white items-end justify-start md:gap-5 md:flex"
         >
-          <li
-            class="w-full transition duration-150 hover:bg-gray-600 md:hover:bg-transparent"
+          <!-- Avatar Profile -->
+          <div
+            class="flex items-center justify-start py-1.5 px-5 md:justify-center md:p-0"
           >
-            <a
-              href="#"
-              class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4"
+            <button
+              id="panelUser"
+              class="w-10 h-10 rounded-full bg-white overflow-hidden"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                fill="currentColor"
-                class="w-4 h-4 md:hidden"
-              >
-                <path
-                  d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
-                />
-              </svg>
-              <p>Masuk</p>
-            </a>
-          </li>
-          <li class="w-full hover:bg-gray-600 md:hover:bg-transparent">
-            <a
-              href="#"
-              class="w-full flex items-center py-1.5 px-5 transition duration-150 gap-1 md:gap-0 md:py-2 md:px-4 md:rounded md:hover:bg-amber-600 md:bg-amber-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                fill="currentColor"
-                class="w-4 h-4 md:hidden"
-              >
-                <path
-                  d="M217.9 105.9L340.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L217.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1L32 320c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM352 416l64 0c17.7 0 32-14.3 32-32l0-256c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32l64 0c53 0 96 43 96 96l0 256c0 53-43 96-96 96l-64 0c-17.7 0-32-14.3-32-32s14.3-32 32-32z"
-                />
-              </svg>
-              <p>Daftar</p>
-            </a>
-          </li>
+              <img
+                src="../../../src/assets/profile/rb_2149758781.png"
+                alt="Profile"
+                class="w-full h-full object-cover"
+              />
+            </button>
+          </div>
         </ul>
       </div>
       <div
@@ -648,6 +626,35 @@
       </div>
     </section>
 
+    <!-- Alert -->
+    <section
+      id="alertForm"
+      class="fixed top-0 left-1/2 mt-[66px] hidden opacity-0 transition duration-300 transform -translate-y-20 -translate-x-1/2"
+    >
+      <div
+        class="relative flex flex-col items-center justify-center px-3 py-3 rounded-lg text-red-400 bg-red-950 shadow-lg shadow-red-500"
+      >
+        <div class="flex items-center justify-center gap-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 -960 960 960"
+            class="w-6 h-6 lg:w-7 lg:h-7"
+            fill="currentColor"
+          >
+            <path
+              d="m336-293.85 144-144 144 144L666.15-336l-144-144 144-144L624-666.15l-144 144-144-144L293.85-624l144 144-144 144L336-293.85ZM480.07-100q-78.84 0-148.21-29.92t-120.68-81.21q-51.31-51.29-81.25-120.63Q100-401.1 100-479.93q0-78.84 29.92-148.21t81.21-120.68q51.29-51.31 120.63-81.25Q401.1-860 479.93-860q78.84 0 148.21 29.92t120.68 81.21q51.31 51.29 81.25 120.63Q860-558.9 860-480.07q0 78.84-29.92 148.21t-81.21 120.68q-51.29 51.31-120.63 81.25Q558.9-100 480.07-100Zm-.07-60q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"
+            />
+          </svg>
+          <h2 class="font-medium text-sm lg:text-sm">
+            Pastikan tidak ada yang kosong!
+          </h2>
+        </div>
+        <span
+          class="absolute bottom-0 inline-block h-0.5 w-full rounded-b-lg origin-right animate-shrink bg-amber-500"
+        ></span>
+      </div>
+    </section>
+
     <footer class="bg-slate-800 font-plusjakartasans text-white">
       <div
         class="container block items-center justify-center pb-10 pt-10 md:pb-14 md:pt-8 md:flex"
@@ -656,7 +663,7 @@
           class="w-full h-56 flex flex-col items-start justify-center pr-5 md:w-1/2"
         >
           <img
-            src="../../../public/image/logo2transparan.png"
+            src="../../image/logo2transparan.png"
             alt=""
             class="object-cover w-28 md:w-36"
           />
@@ -699,28 +706,28 @@
             >
               <li>
                 <a
-                  href="../games/ml.html"
+                  href="./ml.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Mobile Legends</a
                 >
               </li>
               <li>
                 <a
-                  href="../games/valo.html"
+                  href="./valo.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Valorant</a
                 >
               </li>
               <li>
                 <a
-                  href="../games/ff.html"
+                  href="./ff.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Free Fire</a
                 >
               </li>
               <li>
                 <a
-                  href="../games/genpact.html"
+                  href="./genpact.html"
                   class="transition duration-150 text-slate-300 hover:text-white"
                   >Genshin Impact</a
                 >
@@ -731,17 +738,17 @@
             <h1 class="font-semibold text-base">SOSIAL MEDIA</h1>
             <div class="mt-5 w-full flex items-center justify-between">
               <a
-                href="#"
+                href=""
                 class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
                 ><i class="fa-brands fa-instagram text-2xl"></i
               ></a>
               <a
-                href="#"
+                href=""
                 class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
                 ><i class="fa-brands fa-tiktok text-2xl"></i
               ></a>
               <a
-                href="#"
+                href=""
                 class="transition duration-150 scale-100 hover:-rotate-6 hover:scale-110"
                 ><i class="fa-brands fa-whatsapp text-2xl"></i
               ></a>
